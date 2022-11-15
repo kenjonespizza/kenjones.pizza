@@ -3,6 +3,8 @@
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { getContext } from 'svelte';
 	import { browser } from '$app/environment';
+	import { cloudinary } from '$lib/cloudinary';
+	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
 
 	const data = getContext('data');
 
@@ -11,10 +13,17 @@
 	 */
 	let y = 0;
 
-	afterNavigate(() => {
-		$isMenuOpen = false;
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	});
+	let image = data.logoImage;
+	let img = cloudinary.image(
+		`${data.cloudinaryConfig.folder ? `${data.cloudinaryConfig.folder}/${image.src}` : image.src}`
+	);
+	img = convertToSquareimageAutoFormatAndQuality(img);
+	const src = img.toURL();
+
+	// afterNavigate(() => {
+	// 	$isMenuOpen = false;
+	// 	window.scrollTo({ top: 0, behavior: 'smooth' });
+	// });
 
 	$: {
 		if (browser) {
@@ -32,13 +41,13 @@
 <header
 	class={`${
 		y > 100 ? 'bg-white' : 'bg-transparent'
-	} w-full transition fixed p-[25px] flex justify-between z-10`}
+	} w-full transition fixed p-[25px] flex justify-between z-20`}
 >
 	<h1 class="">
 		<a href="/" class="flex gap-4 items-center">
 			<div class="rounded-full border border-gray-100">
 				<img
-					src="/images/photos/1.webp"
+					{src}
 					alt="Ken Jones Headshot"
 					class="rounded-full h-[50px] w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
 				/>

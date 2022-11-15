@@ -13,6 +13,6 @@
 	/>
 </svelte:head>
 
-<main class="pt-40">
+<main class="pt-40 pb-12">
 	<slot />
 </main>

@@ -1,8 +1,19 @@
 <script>
+	import { getContext } from 'svelte';
 	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
+	import { cloudinary } from '$lib/cloudinary';
+	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
+	const data = getContext('data');
+
+	export let image;
+
+	let img = cloudinary.image(
+		`${data.cloudinaryConfig.folder ? `${data.cloudinaryConfig.folder}/${image.src}` : image.src}`
+	);
+	img = convertToSquareimageAutoFormatAndQuality(img);
+	const src = img.toURL();
 
 	/** @type {Object.<string,string>} **/
-	export let image;
 </script>
 
 <button
@@ -28,9 +39,45 @@
 			/></svg
 		>
 	</div>
-	<img
+	<!-- <img
 		src={image.src}
 		alt={image.alt}
 		class={`rounded-2xl aspect-square object-cover transform transition`}
+	/>
+	<picture>
+		<img
+			sizes="(max-width: 800px) 100vw, 800px"
+			srcset={`
+		${image.src},w_200.webp 200w,
+		${image.src},w_588.webp 588w,
+		${image.src},w_800.webp 800w`}
+			src="${image.src},w_800.webp"
+			class={`rounded-2xl aspect-square object-cover transform transition`}
+			alt={image.alt}
+		/>
+	</picture> -->
+
+	<!-- <picture>
+		<img
+			sizes="(max-width: 1394px) 100vw, 1394px"
+			srcset="
+			${image.src},w_200.jpg 200w,
+			${image.src},w_565.jpg 565w,
+			${image.src},w_829.jpg 829w,
+			${image.src},w_1035.jpg 1035w,
+			${image.src},w_1200.jpg 1200w,
+			${image.src},w_1343.jpg 1343w,
+			${image.src},w_1391.jpg 1391w,
+			${image.src},w_1394.jpg 1394w"
+			src="${image.src},w_1394.jpg"
+			class={`rounded-2xl aspect-square object-cover transform transition`}
+			alt={image.alt}
+		/>
+	</picture> -->
+
+	<img
+		{src}
+		class={`rounded-2xl aspect-square object-cover transform transition`}
+		alt={image.alt}
 	/>
 </button>
