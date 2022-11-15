@@ -14,11 +14,9 @@
 
 	function rotateText(interval) {
 		let maxCount = data.titles.length - 1;
-		console.log('maxCount:', maxCount);
 		let currCount = 0;
 
 		setInterval(() => {
-			// console.log('currCount:', currCount);
 			const currEl = document.querySelector(`.line-${currCount}`);
 			const nextIndex = currCount === maxCount ? 0 : currCount + 1;
 			const nextEl = document.querySelector(`.line-${nextIndex}`);

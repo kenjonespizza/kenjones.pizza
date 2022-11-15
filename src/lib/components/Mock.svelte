@@ -1,58 +1,36 @@
 <script>
 	import { tweened } from 'svelte/motion';
 	import { elasticInOut } from 'svelte/easing';
+	import { cloudinary } from '$lib/cloudinary';
+	import { imageAutoFormatAndQuality } from '$lib/utils';
+	import { getContext } from 'svelte';
+
+	let data = getContext('data');
 
 	/** @type {string} */
 	export let src = '';
-	/**
-	 * @type {string}
-	 */
+
+	/** @type {string} */
 	export let alt = '';
+
+	/** @type {string} */
+	export let title = '';
 
 	/**
 	 * @type {boolean}
 	 */
 	export let offset = false;
 
-	let amountToScroll = 0;
-
-	function scrollImage(node) {
-		// console.log('node:', node);
-		const image = node.querySelector('img');
-		const imageHeight = image.height;
-		// console.log('imageHeight:', imageHeight);
-		const nodeHeight = node.offsetHeight;
-		// console.log('nodeHeight:', nodeHeight);
-		amountToScroll = imageHeight - nodeHeight;
-		// const scrollHeight = document.body.scrollHeight;
-		// const scrollPosition = window.scrollY;
-		// const scrollPercent = scrollPosition / (scrollHeight - nodeHeight);
-		// const imageOffset = imageHeight * scrollPercent;
-
-		// image.style.transform = `translateY(-${imageOffset}px)`;
-		// image.addEventHandler('mouseover', () => {
-
-		// })
-	}
-
-	const y = tweened(0, {
-		duration: 5000
-		// easing: elasticInOut
-	});
-
-	function triggerScroll() {
-		$y = amountToScroll;
-	}
-	function unTriggerScroll() {
-		$y = 0;
-	}
-
-	// $: console.log($y);
+	let img = cloudinary.image(
+		`${data.cloudinaryConfig.folder ? `${data.cloudinaryConfig.folder}/${src}` : src}`
+	);
+	img = imageAutoFormatAndQuality(img);
+	src = img.toURL();
 </script>
 
 <figure
 	class={`border rounded-lg border-gray-50 bg-gray overflow-hidden self-end ${
-		offset ? 'min-w-[1024px]' : ''
+		offset ? '[@media(min-width:1130px)]:min-w-[1024px]' : ''
 	}`}
 >
 	<div class="flex gap-[.3rem] p-2">
@@ -60,12 +38,7 @@
 		<div class="rounded-full w-[9px] h-[9px] bg-yellow-500" />
 		<div class="rounded-full w-[9px] h-[9px] bg-green-500" />
 	</div>
-	<div class="aspect-[8/4.8] overflow-y-scroll group relative mini-scrollbar" use:scrollImage>
-		<img
-			src={`/images/case-studies/${src}`}
-			{alt}
-			class={`w-full transform origin-bottom transition `}
-			style="top: -{$y}px;"
-		/>
+	<div class="aspect-[8/4.8] overflow-y-scroll group relative mini-scrollbar">
+		<img {src} {alt} class={`w-full transform origin-bottom transition `} />
 	</div>
 </figure>

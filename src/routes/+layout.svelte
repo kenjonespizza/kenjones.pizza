@@ -1,6 +1,7 @@
 <script>
 	import '$lib/css/app.postcss';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -23,4 +24,5 @@
 <div class="page-wrapper">
 	<Header />
 	<slot />
+	<Footer />
 </div>
