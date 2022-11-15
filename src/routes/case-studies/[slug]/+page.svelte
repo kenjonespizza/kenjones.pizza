@@ -34,10 +34,12 @@
 
 		<div class="col-span-4 space-y-6">
 			{#each data.project.images as image}
-				<div>
-					<span>{image.title}</span>
-					<Mock src={image.src} alt={image.alt} title={image.title} />
-				</div>
+				{#key image.src}
+					<div>
+						<span>{image.title}</span>
+						<Mock src={image.src} alt={image.alt} title={image.title} />
+					</div>
+				{/key}
 			{/each}
 		</div>
 	</div></Container
