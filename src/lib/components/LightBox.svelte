@@ -1,6 +1,5 @@
 <script>
 	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
-	console.log('$CurrentLightBoxImageSrc:', $CurrentLightBoxImageSrc);
 	import { cloudinary } from '$lib/cloudinary';
 	import { getContext } from 'svelte';
 	import { imageAutoFormatAndQuality } from '$lib/utils';

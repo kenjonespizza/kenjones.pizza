@@ -5,7 +5,6 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-	// console.log('data:', data);
 
 	import { setContext } from 'svelte';
 	setContext('data', data);
