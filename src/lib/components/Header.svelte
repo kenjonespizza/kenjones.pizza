@@ -20,10 +20,10 @@
 	img = convertToSquareimageAutoFormatAndQuality(img);
 	const src = img.toURL();
 
-	// afterNavigate(() => {
-	// 	$isMenuOpen = false;
-	// 	window.scrollTo({ top: 0, behavior: 'smooth' });
-	// });
+	afterNavigate(() => {
+		$isMenuOpen = false;
+		// window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
 
 	$: {
 		if (browser) {
