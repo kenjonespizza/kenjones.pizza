@@ -11,5 +11,5 @@
 
 <section class="p-10 border-t border-gray-50">
 	<!-- <HomeLine class="w-20 h-20 fill" /> -->
-	<div class="text-center text-gray-200">&copy;{date.getFullYear()} {data.copyright}</div>
+	<div class="text-center text-gray-500">&copy;{date.getFullYear()} {data.copyright}</div>
 </section>
