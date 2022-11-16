@@ -56,6 +56,7 @@
 			$isMenuOpen = true;
 		}}
 	>
+		<span class="sr-only">Open Navigation</span>
 		<div
 			class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
 		>
@@ -82,6 +83,7 @@
 					$isMenuOpen = false;
 				}}
 			>
+				<span class="sr-only">Close Navigation</span>
 				<div
 					class="origin-center w-[20px] h-[18px] transition-all group relative hover:rotate-0 group"
 				>

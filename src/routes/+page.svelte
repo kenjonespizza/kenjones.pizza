@@ -11,6 +11,25 @@
 	const data = getContext('data');
 </script>
 
+<svelte:head>
+	<title>{data.meta.title}</title>
+	{#if data?.meta?.description}<meta name="description" content={data.meta.description} />{/if}
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="twitter:card" content="summary" />
+	{#if data?.meta?.twitterUsername}<meta
+			name="twitter:site"
+			content="@{data.meta.twitterUsername}"
+		/>{/if}
+	<meta property="og:type" content="website" />
+	{#if data?.meta?.title}<meta property="og:title" content={data.meta.title} />{/if}
+	{#if data?.meta?.description}<meta
+			property="og:description"
+			content={data.meta.description}
+		/>{/if}
+	{#if data?.meta?.siteName}<meta property="og:site_name" content={data.meta.siteName} />{/if}
+	<meta property="og:url" content={`${data.siteInfo.url.href}`} />
+</svelte:head>
+
 <LightBox />
 
 <Hero />

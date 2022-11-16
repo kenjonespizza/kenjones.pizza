@@ -38,7 +38,6 @@ const logoImage = {
 	src: '1',
 	alt: name
 };
-const favicon = '1'; // From Cloudinary
 const bioImages = [
 	{ src: '1', alt: name },
 	{ src: '2', alt: name },
@@ -53,131 +52,6 @@ const bioImages = [
 	{ src: '11', alt: name },
 	{ src: '12', alt: name }
 ];
-// const resume = `
-// <!-- Entry -->
-// <div class="flex flex-col md:flex-row justify-start gap-6">
-// 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-// 						<time datetime="2008-02-14 20:00">October 2015</time> -
-// 						<time datetime="2008-02-14 20:00">Present</time>
-// 					</div>
-// 					<div class="-mt-2 md:mt-auto prose prose-sm">
-// 						<h3 class="font-serif text-2xl leading-none mb-1	">
-// 							<span class="font-bold">AllDay</span> (Remote) - Web Agency.
-// 						</h3>
-// 						<h4 class="text-xl font-medium italic">Founder, Design & Development Lead</h4>
-// 						<ul>
-// 							<li>In charge of all design and development projects.</li>
-// 							<li>
-// 								Manages design and development. &nbsp;This includes &nbsp;code reviews, design
-// 								reviews, workload management, and 1 on 1 check ins.
-// 							</li>
-// 							<li>Provides project timelines and budget requirements.</li>
-// 							<li>In charge of qualifying, hiring, and training designers &amp; developers.</li>
-// 							<li>Plays a vital role in project management, often using the Kanban framework.</li>
-// 							<li>
-// 								Recognized by being published in &ldquo;Innovate Tampa Bay&rdquo; in 2021 as a
-// 								premier web agency.&nbsp;
-// 							</li>
-// 							<li>
-// 								Technologies used: JavaScript, TypeScript, Svelte, SvelteKit, Tailwind CSS, React,
-// 								Gatsby, NextJS, HTML, CSS, Figma, GitHub, Webflow, Photoshop, Illustrator
-// 							</li>
-// 						</ul>
-// 					</div>
-// 				</div>
-// 				<!-- Entry -->
-// 				<div class="flex flex-col md:flex-row justify-start gap-6">
-// 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-// 						<time datetime="2008-02-14 20:00">February 2015 </time> -
-// 						<time datetime="2008-02-14 20:00">October 2015</time>,<br />
-// 						<time datetime="2008-02-14 20:00">July 2012</time> -
-// 						<time datetime="2008-02-14 20:00">October 2013</time>
-// 					</div>
-// 					<div class="-mt-2 md:mt-auto prose prose-sm">
-// 						<h3 class="font-serif text-2xl leading-none mb-1	">
-// 							<span class="font-bold">Freelance Consultant</span> (Remote)
-// 						</h3>
-// 						<h4 class="text-xl font-medium italic">Designer/Engineer</h4>
-// 						<ul>
-// 							<li>Independently work with companies to create websites & web apps.</li>
-// 							<li>Specialize in doing both the design and development.</li>
-// 							<li>
-// 								Technologies used: JavaScript, HTML, CSS, SCSS, Responsive design, PHP, GitHub,
-// 								MySQL, Figma, Sketch, Photoshop, Illustrator
-// 							</li>
-// 						</ul>
-// 					</div>
-// 				</div>
-// 				<!-- Entry -->
-// 				<div class="flex flex-col md:flex-row justify-start gap-6">
-// 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-// 						<time datetime="2008-02-14 20:00">October 2013 </time> -
-// 						<time datetime="2008-02-14 20:00">February 2015</time>
-// 					</div>
-// 					<div class="-mt-2 md:mt-auto prose prose-sm">
-// 						<h3 class="font-serif text-2xl leading-none mb-1	">
-// 							<span class="font-bold">Red Ventures</span> (Charlotte, NC.) - Customer Acquisition Specialists
-// 						</h3>
-// 						<h4 class="text-xl font-medium italic">Web Designer / Developer Hybrid</h4>
-// 						<ul>
-// 							<li>Lead a team consisting of a developer and a designer.</li>
-// 							<li>
-// 								Contributed to the internal communications team to design and develop a new company
-// 								website, blog, and careers site.
-// 							</li>
-// 							<li>Technologies used: PHP, JavaScript, HTML, CSS, SCSS, GitHub, Sketch, Jira</li>
-// 						</ul>
-// 					</div>
-// 				</div>
-// 				<!-- Entry -->
-// 				<div class="flex flex-col md:flex-row justify-start gap-6">
-// 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-// 						<time datetime="2008-02-14 20:00">October 2013 </time> -
-// 						<time datetime="2008-02-14 20:00">February 2015</time>
-// 					</div>
-// 					<div class="-mt-2 md:mt-auto prose prose-sm">
-// 						<h3 class="font-serif text-2xl leading-none mb-1	">
-// 							<span class="font-bold">Paradise Advertising and Marketing</span> (St. Petersburg, Fl.)
-// 							- Agency
-// 						</h3>
-// 						<h4 class="text-xl font-medium italic">Front-End Developer & Web Designer</h4>
-// 						<ul>
-// 							<li>Built sites on a custom PHP/MySQL based CMS.</li>
-// 							<li>
-// 								Custom website designs, often done with the client sitting with me for the most
-// 								custom experience.
-// 							</li>
-// 							<li>In charge of running client CMS trainings.</li>
-// 							<li>Technologies used: PHP, MySQL, HTML, CSS, Photoshop</li>
-// 						</ul>
-// 					</div>
-// 				</div>
-// 				<!-- Entry -->
-// 				<div class="flex flex-col md:flex-row justify-start gap-6">
-// 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-// 						<time datetime="2008-02-14 20:00">May 2008 </time> -
-// 						<time datetime="2008-02-14 20:00">April 2012</time>
-// 					</div>
-// 					<div class="-mt-2 md:mt-auto prose prose-sm">
-// 						<h3 class="font-serif text-2xl leading-none mb-1	">
-// 							<span class="font-bold">eLink Design</span> (Lexington, Ky.) - Web Agency
-// 						</h3>
-// 						<h4 class="text-xl font-medium italic">
-// 							Lead Front-End Developer & Web Design Director
-// 						</h4>
-// 						<ul>
-// 							<li>Lead web projects and orchestrate the development team.</li>
-// 							<li>
-// 								Closely collaborated with Art Department (print) to seamlessly merge the branding of
-// 								the website and print work.
-// 							</li>
-// 							<li>Lead client meetings to ensure proper direction and scope of work.</li>
-// 							<li>Technologies used: PHP, WordPress, MySQL, HTML, CSS, Subversion, Photoshop</li>
-// 						</ul>
-// 					</div>
-// 				</div>
-// `;
-
 const resume = `<!-- Entry -->
 <div class="flex flex-col md:flex-row justify-start gap-6">
 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
@@ -369,6 +243,14 @@ const cta = {
 	text: 'After a 7 year stint of successfully running a digital web agency for 7 years, I’m ready for my next challenge. With 15 years experience in <strong class="font-extrabold">design</strong>, <strong class="font-extrabold">engineering</strong>, <strong class="font-extrabold">consulting</strong>, and <strong class="font-extrabold">managing</strong>.' // Can be HTML
 };
 const copyright = 'KenJonesPizza';
+const meta = {
+	favicon: '1',
+	OgImage: '1',
+	title: `${name} | Web designer, developer, specialist`,
+	description: `${name}'s portfolio website.  Email him at: ${email}`,
+	siteName: `KenJonesPizza`,
+	twitterUsername: 'kenjonespizza'
+};
 
 export const data = {
 	name,
@@ -379,7 +261,7 @@ export const data = {
 	logoImage,
 	resume,
 	bioImages,
-	favicon,
+	meta,
 	caseStudies,
 	cloudinaryConfig,
 	cta,
