@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="bg-primary p-[50px] xl:p-[100px] rounded-[50px] text-white flex flex-col xl:flex-row justify-between gap-12 xl:items-center"
+	class="bg-gray p-[50px] xl:p-[100px] rounded-[50px] text-white flex flex-col xl:flex-row justify-between gap-12 xl:items-center"
 >
 	<h2 class="font-serif text-4xl md:text-6xl xl:text-7xl font-bold shadow-">
 		{data.cta.heading}
@@ -18,7 +18,7 @@
 			class="w-full flex flex-col md:flex-row xl:flex-col 2xl:flex-row justify-start md:justify-between items-start md:items-baseline gap-6"
 		>
 			<a
-				class="w-full whitespace-nowrap rounded-full md:w-auto justify-center bg-white flex gap-[22px] px-[30px] py-[17px] text-gray font-medium text-xl items-center hover:"
+				class="w-full whitespace-nowrap rounded-full md:w-auto justify-center bg-white flex gap-[22px] px-[30px] py-[17px] text-gray font-medium text-xl items-center transition hover:bg-primary hover:text-white group"
 				rel="noreferrer"
 				target="_blank"
 				href={data?.links?.chat?.url}
@@ -26,7 +26,7 @@
 				<span>{data?.links?.chat?.text}</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="text-primary"
+					class="text-primary group-hover:text-white transition"
 					viewBox="0 0 24 24"
 					width="24"
 					height="24"
@@ -37,9 +37,16 @@
 				>
 			</a>
 			<div class="flex w-full justify-between md:justify-end xl:justify-start gap-[25px] text-xl">
-				<a class="underline font-medium" rel="external" href={`mailto:${data.email}`}>Email Me</a>
-				<a href={data.links.resume} rel="noreferrer" target="_blank" class="underline font-medium"
-					>Download Resume</a
+				<a
+					class="underline font-medium transition hover:text-primary"
+					rel="external"
+					href={`mailto:${data.email}`}>Email Me</a
+				>
+				<a
+					href={data.links.resume}
+					rel="noreferrer"
+					target="_blank"
+					class="underline font-mediumm transition hover:text-primary">Download Resume</a
 				>
 			</div>
 		</div>
