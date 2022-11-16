@@ -9,7 +9,7 @@ const links = {
 	resume:
 		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf' // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
 };
-const titles = ['Designer', 'Engineer', 'Birder', '🐶 Foster Dad'];
+const titles = ['Designer', 'Engineer', '🐶 Foster Dad', 'Friend', 'Birder 🦉'];
 const bio = `<p class="font-serif text-5xl font-light leading-tight">
 I’m a web consultant with skills and experience as a <strong class="font-bold"
   >designer</strong
@@ -38,6 +38,7 @@ const logoImage = {
 	src: '1',
 	alt: name
 };
+const favicon = '1'; // From Cloudinary
 const bioImages = [
 	{ src: '1', alt: name },
 	{ src: '2', alt: name },
@@ -266,7 +267,7 @@ const caseStudies = [
 			{
 				src: 'birdables-cards',
 				alt: 'Birdables Cards Page',
-				title: 'Homepage'
+				title: 'Cards Page'
 			},
 			{
 				src: 'birdables-about',
@@ -378,6 +379,7 @@ export const data = {
 	logoImage,
 	resume,
 	bioImages,
+	favicon,
 	caseStudies,
 	cloudinaryConfig,
 	cta,

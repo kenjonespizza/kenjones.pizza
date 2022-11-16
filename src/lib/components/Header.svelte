@@ -13,13 +13,6 @@
 	 */
 	let y = 0;
 
-	let image = data.logoImage;
-	let img = cloudinary.image(
-		`${data.cloudinaryConfig.folder ? `${data.cloudinaryConfig.folder}/${image.src}` : image.src}`
-	);
-	img = convertToSquareimageAutoFormatAndQuality(img);
-	const src = img.toURL();
-
 	afterNavigate(() => {
 		$isMenuOpen = false;
 		// window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -47,7 +40,7 @@
 		<a href="/" class="flex gap-4 items-center">
 			<div class="rounded-full border border-gray-100">
 				<img
-					{src}
+					src={convertToSquareimageAutoFormatAndQuality(data.logoImage.src)}
 					alt="Ken Jones Headshot"
 					class="rounded-full h-[50px] w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
 				/>

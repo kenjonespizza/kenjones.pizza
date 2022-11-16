@@ -1,10 +1,7 @@
 <script>
 	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
-	import { cloudinary } from '$lib/cloudinary';
 	import { getContext } from 'svelte';
 	import { imageAutoFormatAndQuality } from '$lib/utils';
-
-	let data = getContext('data');
 
 	let img;
 	let src;
@@ -19,17 +16,10 @@
 	}
 
 	$: {
-		if ($CurrentLightBoxImageSrc) {
-			img = cloudinary.image(
-				`${
-					data.cloudinaryConfig.folder
-						? `${data.cloudinaryConfig.folder}/${$CurrentLightBoxImageSrc}`
-						: $CurrentLightBoxImageSrc
-				}`
-			);
-			img = imageAutoFormatAndQuality(img);
-			src = img.toURL();
-		}
+		// if ($CurrentLightBoxImageSrc) {
+		// 	img = imageAutoFormatAndQuality($CurrentLightBoxImageSrc);
+		// 	src = img.toURL();
+		// }
 	}
 </script>
 
@@ -43,7 +33,7 @@
 	>
 		<button on:click={() => ($isLightBoxOpen = false)}>
 			<img
-				{src}
+				src={imageAutoFormatAndQuality($CurrentLightBoxImageSrc)}
 				alt={$CurrentLightBoxImageAlt}
 				class="max-w-[calc(100vw-25px)] max-h-[calc(100vh-25px)] lg:max-w-[calc(100vw-100px)] lg:max-h-[calc(100vh-100px)]"
 			/>

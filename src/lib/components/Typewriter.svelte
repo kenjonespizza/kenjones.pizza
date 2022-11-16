@@ -21,11 +21,13 @@
 			const nextIndex = currCount === maxCount ? 0 : currCount + 1;
 			const nextEl = document.querySelector(`.line-${nextIndex}`);
 
-			currEl.classList.add('opacity-0');
-			currEl.classList.remove('opacity-100');
-			nextEl.classList.add('opacity-100');
-			nextEl.classList.remove('opacity-0');
-			currCount = nextIndex;
+			if (currEl && nextEl) {
+				currEl.classList.add('opacity-0');
+				currEl.classList.remove('opacity-100');
+				nextEl.classList.add('opacity-100');
+				nextEl.classList.remove('opacity-0');
+				currCount = nextIndex;
+			}
 		}, interval);
 	}
 </script>
