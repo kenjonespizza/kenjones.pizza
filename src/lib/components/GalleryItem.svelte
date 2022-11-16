@@ -7,12 +7,6 @@
 
 	export let image;
 
-	let img = cloudinary.image(
-		`${data.cloudinaryConfig.folder ? `${data.cloudinaryConfig.folder}/${image.src}` : image.src}`
-	);
-	img = convertToSquareimageAutoFormatAndQuality(img);
-	const src = img.toURL();
-
 	/** @type {Object.<string,string>} **/
 </script>
 
@@ -76,7 +70,7 @@
 	</picture> -->
 
 	<img
-		{src}
+		src={convertToSquareimageAutoFormatAndQuality(image.src)}
 		class={`rounded-2xl aspect-square object-cover transform transition`}
 		alt={image.alt}
 	/>

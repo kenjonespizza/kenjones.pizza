@@ -10,7 +10,7 @@
 	<main>
 		<Container>
 			<div class="flex flex-col">
-				<span class="text-gray/70 text-xl lg:text-2xl">{data.name} is a:</span>
+				<span class="text-gray/70 text-xl lg:text-2xl">Words that describe {data.name}:</span>
 				<Typewriter />
 			</div>
 		</Container>
