@@ -1,11 +1,37 @@
 <script>
 	import Container from '$lib/components/Container.svelte';
 	import Mock from '$lib/components/Mock.svelte';
-	import { image } from '@cloudinary/url-gen/qualifiers/source';
-
+	import { page } from '$app/stores';
 	/** @type {import('./$types').PageData} */
 	export let data;
+
+	data.siteInfo = {
+		url: $page.url,
+		route: $page.route
+	};
 </script>
+
+<svelte:head>
+	<title>{data.project.name}</title>
+	{#if data?.meta?.description}<meta
+			name="description"
+			content={data.project.shortDescription}
+		/>{/if}
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="twitter:card" content="summary" />
+	{#if data?.meta?.twitterUsername}<meta
+			name="twitter:site"
+			content="@{data.meta.twitterUsername}"
+		/>{/if}
+	<meta property="og:type" content="website" />
+	{#if data?.meta?.title}<meta property="og:title" content={data.project.name} />{/if}
+	{#if data?.meta?.description}<meta
+			property="og:description"
+			content={data.project.shortDescription}
+		/>{/if}
+	{#if data?.meta?.siteName}<meta property="og:site_name" content={data.meta.siteName} />{/if}
+	<meta property="og:url" content={`${data.siteInfo.url.href}`} />
+</svelte:head>
 
 <Container>
 	<div class="mt-10 grid grid-cols-1 lg:grid-cols-7 gap-12">

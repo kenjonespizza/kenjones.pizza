@@ -1,6 +1,7 @@
 <script>
 	import '$lib/css/app.postcss';
-	import Header from '$lib/components/Header.svelte';
+	/** @type {import('./$types').PageData} */
+	export let data;
 </script>
 
 <svelte:head>
