@@ -9,8 +9,8 @@ const links = {
 	resume:
 		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf' // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
 };
-const titles = ['Designer', 'Engineer', '🐶 Foster Dad', 'Friend', 'Birder 🦉'];
-const bio = `<p class="font-serif text-5xl font-light leading-tight">
+const titles = ['🎨 Designer', '🧑🏾‍💻 Engineer', '🐶 Foster Dad', '🕹 Gamer', '🦉 Birder'];
+const bio = `<p class="font-serif text-3xl lg:text-5xl font-light leading-tight">
 I’m a web consultant with skills and experience as a <strong class="font-bold"
   >designer</strong
 >,
@@ -24,7 +24,7 @@ and am ready for my
   ></strong
 >.
 </p>
-<p class="text-2xl text-gray/70 leading-normal">
+<p class="text-xl lg:text-2xl text-gray/70 leading-normal">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque
 aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
 pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc
@@ -122,7 +122,7 @@ const resume = `<!-- Entry -->
 							<span class="font-bold">eLink Design</span> (Lexington, Ky.) - Web Agency
 						</h3>
 						<h4 class="text-xl font-medium italic">
-							Lead Front-End Developer & Web Design Director
+							Front-End Developer & Web Design Director
 						</h4>
 						
 					</div>
@@ -136,25 +136,102 @@ const caseStudies = [
 			{
 				src: 'birdables-main',
 				alt: 'Birdables Home Page',
-				title: 'Homepage'
+				title: 'Homepage',
+				isBrowserPreview: true
 			},
 			{
 				src: 'birdables-cards',
 				alt: 'Birdables Cards Page',
-				title: 'Cards Page'
+				title: 'Cards Page',
+				isBrowserPreview: true
 			},
 			{
 				src: 'birdables-about',
 				alt: 'Birdables About Page',
-				title: 'Cards Page'
+				title: 'Cards Page',
+				isBrowserPreview: true
+			},
+			{
+				src: 'brown-pelican',
+				alt: 'Brown Pelican Card',
+				title: 'Brown Pelican Card',
+				isBrowserPreview: false
+			},
+			{
+				src: 'roseate-spoonbill',
+				alt: 'Roseate Spoonbill Card',
+				title: 'Roseate Spoonbill Card',
+				isBrowserPreview: false
+			},
+			{
+				src: 'cards-on-grass',
+				alt: 'Cards on grass',
+				title: 'Bridables Cards Printed',
+				isBrowserPreview: false
 			}
 		],
-		shortDescription: `Birdables is a passion project that I launched in 2021. It's a collection of physical & digital collectable bird cards, accompanied by a custome website.`,
-		longDescription: `<p>Birdables is a passion project that I launched in 2021. It's a collection of physical & digital collectable bird cards, accompanied by a custome website.</p>`, // can be html
+		shortDescription: `Birdables is a passion project that I launched in 2021. It's a collection of physical & digital collectable bird cards, accompanied by a custome website.  Completely designed and developed by me.`,
+		longDescription: `<p>Birdables is a passion project that I launched in 2021. It's a collection of physical & digital collectable bird cards, accompanied by a custome website.  Completely designed and developed by me.</p>
+		<p><span class="font-bold">Technologies Used:</span>
+		<ul>
+			<li><a href="https://kit.svelte.dev/">SvelteKit</a></li>
+				<li><a href="https://turbo.build/repo">Figma</a></li>
+				<li><a href="https://www.adobe.com/products/photoshop.html">Photoshop</a></li>
+				<li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+				<li><a href="https://vercel.com/">Vercel</a></li>
+				<li><a href="https://sanity.io/">Sanity CMS</a></li>
+				<li><a href="https://opensea.io/">OpenSea</a></li>
+				<li><a href="https://www.etsy.com/">Etsy</a></li>
+		</ul>
+	</p>`, // can be html
 		button: {
 			url: 'https://birdables.com',
 			text: 'View Live Site'
 		}
+	},
+	{
+		slug: 'pcs',
+		name: 'PCS Companies',
+		mainImage: 'pcs',
+		images: [
+			{
+				src: 'pcs',
+				alt: 'PCS Homepage',
+				title: 'Blog Homepage',
+				isBrowserPreview: true
+			},
+			{
+				src: 'pcs-locations',
+				alt: 'PCS Locations',
+				title: 'Blog Post',
+				isBrowserPreview: true
+			},
+			{
+				src: 'and-estimate',
+				alt: '&estimate Homepage',
+				title: 'Careers Homepage',
+				isBrowserPreview: true
+			},
+			{
+				src: 'and-build',
+				alt: '&build Homepage',
+				title: 'Creatives Page',
+				isBrowserPreview: true
+			}
+		],
+		shortDescription: `PCS, &estimate, and &build are 3 sites that share a UI Component library, to make updating the design system of the sites more efficent.`,
+		longDescription: `<p>PCS, &estimate, and &build are 3 sites that share a UI Component library, to make updating the design system of the sites more efficent.  Running 3 connected sites that share code but have differences (colors, logos, text, images, etc) called for an effective use of a Monorepo and some, some nifty config files, and utility functions to keep the wires pointing in the right direction:</p>
+		
+		<p><span class="font-bold">Technologies Used:</span>
+			<ul>
+				<li><a href="https://kit.svelte.dev/">SvelteKit</a></li>
+				<li><a href="https://turbo.build/repo">Turbo Monorepo</a></li>
+				<li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+				<li><a href="https://vercel.com/">Vercel</a></li>
+				<li><a href="https://sanity.io/">Sanity CMS</a></li>
+				<li><a href="https://kwesforms.com/">KWES Forms</a></li>
+			</ul>
+		</p>` // can be html
 	},
 	{
 		slug: 'red-ventures',
@@ -164,56 +241,32 @@ const caseStudies = [
 			{
 				src: 'rv-blog',
 				alt: 'Red Ventures Blog',
-				title: 'Blog Homepage'
+				title: 'Blog Homepage',
+				isBrowserPreview: true
 			},
 			{
 				src: 'rv-blog-post',
 				alt: 'Red Ventures Careers',
-				title: 'Blog Post'
+				title: 'Blog Post',
+				isBrowserPreview: true
 			},
 			{
 				src: 'rv-careers',
 				alt: 'Red Ventures Careers',
-				title: 'Careers Homepage'
+				title: 'Careers Homepage',
+				isBrowserPreview: true
 			},
 			{
 				src: 'rv-creatives',
 				alt: 'Red Ventures Creatives',
-				title: 'Creatives Page'
+				title: 'Creatives Page',
+				isBrowserPreview: true
 			}
 		],
 		shortDescription: `Custom Wordpress blog and PHP/GreenHouse API careers site for Red Ventures.`,
 		longDescription: `<p>I've worked with Red Ventures a handful of times.  This set of projects contained a Blog and a Careers site.  The Blog is is a custom Wordpress build, with the goal creating a more editorial feeling experience.  The Careers site is a custom PHP build tied tot he Greenhouse.io API.</p>` // can be html
 	},
-	{
-		slug: 'pcs',
-		name: 'PCS Companies',
-		mainImage: 'pcs',
-		images: [
-			{
-				src: 'pcs',
-				alt: 'Red Ventures Blog',
-				title: 'Blog Homepage'
-			},
-			{
-				src: 'pcs-locations',
-				alt: 'Red Ventures Careers',
-				title: 'Blog Post'
-			},
-			{
-				src: 'and-estimate',
-				alt: 'Red Ventures Careers',
-				title: 'Careers Homepage'
-			},
-			{
-				src: 'and-build',
-				alt: 'Red Ventures Creatives',
-				title: 'Creatives Page'
-			}
-		],
-		shortDescription: `Custom Wordpress blog and PHP/GreenHouse API careers site for Red Ventures.`,
-		longDescription: `<p>I've worked with Red Ventures a handful of times.  This set of projects contained a Blog and a Careers site.  The Blog is is a custom Wordpress build, with the goal creating a more editorial feeling experience.  The Careers site is a custom PHP build tied tot he Greenhouse.io API.</p>` // can be html
-	},
+
 	{
 		slug: 'fly-usa',
 		name: 'Fly USA',
@@ -222,17 +275,20 @@ const caseStudies = [
 			{
 				src: 'flyusa-homepage',
 				alt: 'Fly USA',
-				title: 'Homepage'
+				title: 'Homepage',
+				isBrowserPreview: true
 			},
 			{
 				src: 'flyusa-booking',
 				alt: 'Fly USA',
-				title: 'Booking Step 1'
+				title: 'Booking Step 1',
+				isBrowserPreview: true
 			},
 			{
 				src: 'flyusa-about',
 				alt: 'Fly About',
-				title: 'About Page'
+				title: 'About Page',
+				isBrowserPreview: true
 			}
 		],
 		shortDescription: `Fly USA came to me needing a newly designed site and Booking process to help successfully convert interested customers.`,
@@ -250,21 +306,24 @@ const caseStudies = [
 			{
 				src: 'dailyhangar-homepage',
 				alt: 'Daily Hangar Homepage',
-				title: 'Homepage'
+				title: 'Homepage',
+				isBrowserPreview: true
 			},
 			{
 				src: 'dailyhangar-listing',
 				alt: 'Daily Hangar Listing',
-				title: 'Hangar Listing'
+				title: 'Hangar Listing',
+				isBrowserPreview: true
 			},
 			{
 				src: 'dailyhangar-map',
 				alt: 'Daily Hangar map',
-				title: 'Daily Hangar map/Listings'
+				title: 'Daily Hangar map/Listings',
+				isBrowserPreview: true
 			}
 		],
 		shortDescription: `Daily Hangar was my first fully custom designed and engineered web app.`,
-		longDescription: `<p>daily Hangar came to me as a start up needing a full web app with a backend admin.</p>` // can be html
+		longDescription: `<p>Daily Hangar came to me as a startup needing a full web app with a backend admin.  the premis of their product was like an AirBNB for air</p>` // can be html
 	}
 ];
 const cta = {

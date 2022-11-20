@@ -1,5 +1,5 @@
 <script>
-	import { isMenuOpen } from '$lib/stores';
+	import { isMenuOpen, isFullScreenMockOpen } from '$lib/stores';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { getContext } from 'svelte';
 	import { browser } from '$app/environment';
@@ -20,7 +20,7 @@
 
 	$: {
 		if (browser) {
-			if ($isMenuOpen) {
+			if ($isMenuOpen || $isFullScreenMockOpen) {
 				document.body.classList.add('no-scroll');
 			} else {
 				document.body.classList.remove('no-scroll');

@@ -2,6 +2,7 @@
 	import '$lib/css/app.postcss';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import FullScreenMock from '$lib/components/FullScreenMock.svelte';
 	import { returnFavicon, returnOgImage } from '$lib/utils.js';
 	import { page } from '$app/stores';
 
@@ -28,8 +29,9 @@
 	<meta property="og:image" content={returnOgImage(data.meta.OgImage)} />
 </svelte:head>
 
-<div class="page-wrapper">
+<div class="page-wrapper relative">
 	<Header />
 	<slot />
 	<Footer />
+	<FullScreenMock />
 </div>
