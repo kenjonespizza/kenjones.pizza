@@ -34,7 +34,7 @@
 
 <Hero />
 
-<section class="section space-y-12" id="about">
+<section class="section space-y-6 lg:space-y-12" id="about">
 	<Container standard>
 		<h2 class="section-heading">About Me.</h2>
 		<div class="side flex flex-col gap-6">
@@ -62,7 +62,7 @@
 	</Container>
 </section>
 
-<section class="section space-y-12">
+<section class="section space-y-6 lg:space-y-12">
 	<Container standard>
 		<h2 class="section-heading">Featured Works.</h2>
 		<div class="side flex flex-col items-start gap-6">

@@ -2,6 +2,10 @@
 	import Container from '$lib/components/Container.svelte';
 	import Mock from '$lib/components/Mock.svelte';
 	import { page } from '$app/stores';
+	import { imageAutoFormatAndQuality } from '$lib/utils';
+	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
+	import LightBox from '$lib/components/LightBox.svelte';
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 
@@ -30,7 +34,7 @@
 			content={data.project.shortDescription}
 		/>{/if}
 	{#if data?.meta?.siteName}<meta property="og:site_name" content={data.meta.siteName} />{/if}
-	<meta property="og:url" content={`${data.siteInfo.url.href}`} />
+	<meta property="og:url" content={`${data?.siteInfo?.url?.href}`} />
 </svelte:head>
 
 <Container>
@@ -58,15 +62,33 @@
 			{/if}
 		</div>
 
-		<div class="col-span-4 space-y-6">
+		<div class="lg:col-span-4 space-y-6">
 			{#each data.project.images as image}
 				{#key image.src}
 					<div>
 						<span>{image.title}</span>
-						<Mock src={image.src} alt={image.alt} title={image.title} />
+						{#if image.isBrowserPreview}
+							<Mock src={image.src} alt={image.alt} title={image.title} />
+						{:else}
+							<button
+								class="mt-2 transition hover:ring-4 ring-gray ring-offset-2 rounded-2xl overflow-hidden"
+								on:click={() => {
+									$isLightBoxOpen = true;
+									$CurrentLightBoxImageSrc = image.src;
+									$CurrentLightBoxImageAlt = image.alt;
+								}}
+							>
+								<img
+									src={imageAutoFormatAndQuality(image.src)}
+									alt={image.alt}
+									title={image.title}
+								/>
+							</button>
+						{/if}
 					</div>
 				{/key}
 			{/each}
 		</div>
 	</div></Container
 >
+<LightBox />

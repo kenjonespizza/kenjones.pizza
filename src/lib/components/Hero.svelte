@@ -1,6 +1,6 @@
 <script>
 	import Container from './Container.svelte';
-	import Typewriter from './Typewriter.svelte';
+	import TypewriterV2 from './TypewriterV2.svelte';
 
 	import { getContext } from 'svelte';
 	const data = getContext('data');
@@ -11,7 +11,7 @@
 		<Container>
 			<div class="flex flex-col">
 				<span class="text-gray/70 text-xl lg:text-2xl">Words that describe {data.name}:</span>
-				<Typewriter />
+				<TypewriterV2 />
 			</div>
 		</Container>
 	</main>

@@ -35,12 +35,14 @@
 <div class="relative" bind:this={wrapper}>
 	{#if loaded}
 		{#each data.titles as title, i}
-			<span
-				class={`tagline line-${i} transition duration-1000 absolute top-0 left-0 ${
-					i === 0 ? 'opcaity-100' : 'opacity-0'
-				} text-gray text-7xl sm:text-[120px] md:text-[150px] font-serif font-bold tracking-[-.06em] lg:text-[180px]`}
-				>{title}</span
-			>
+			{#key i}
+				<span
+					class={`tagline line-${i} transition duration-1000 absolute top-0 left-0 ${
+						i === 0 ? 'opcaity-100' : 'opacity-0'
+					} text-gray text-7xl sm:text-[120px] md:text-[150px] font-serif font-bold tracking-[-.06em] lg:text-[180px]`}
+					>{title}</span
+				>
+			{/key}
 		{/each}
 	{/if}
 </div>
