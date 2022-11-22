@@ -1,10 +1,12 @@
 <script>
+	import posthog from 'posthog-js';
 	import '$lib/css/app.postcss';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import FullScreenMock from '$lib/components/FullScreenMock.svelte';
 	import { returnFavicon, returnOgImage } from '$lib/utils.js';
 	import { page } from '$app/stores';
+	import { browser, dev } from '$app/environment';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -13,6 +15,16 @@
 		url: $page.url,
 		route: $page.route
 	};
+
+	if (browser && !dev && data?.posthog?.key) {
+		posthog.init(data.posthog.key, {
+			api_host: 'https://app.posthog.com'
+		});
+
+		console.log('HERE');
+
+		posthog.capture('my event', { property: 'value' });
+	}
 
 	import { setContext } from 'svelte';
 	setContext('data', data);

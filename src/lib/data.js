@@ -122,7 +122,7 @@ const resume = `<!-- Entry -->
 							<span class="font-bold">eLink Design</span> (Lexington, Ky.) - Web Agency
 						</h3>
 						<h4 class="text-xl font-medium italic">
-							Front-End Developer & Web Design Director
+							Front-End Developer & Lead Designer
 						</h4>
 						
 					</div>
@@ -339,6 +339,9 @@ const meta = {
 	siteName: `KenJonesPizza`,
 	twitterUsername: 'kenjonespizza'
 };
+const posthog = {
+	key: 'phc_w7KCAXCdTTEQBYQeQMmDhzPBECMCIovl19E4mVIiIT2'
+};
 
 export const data = {
 	name,
@@ -353,5 +356,6 @@ export const data = {
 	caseStudies,
 	cloudinaryConfig,
 	cta,
-	copyright
+	copyright,
+	posthog
 };
