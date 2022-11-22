@@ -50,6 +50,6 @@
 <div class="relative">
 	<div
 		use:swipittySwap={text}
-		class={`transition mt-2 duration-1000 absolute top-0 left-0  text-gray text-7xl sm:text-[120px] md:text-[150px] font-serif font-bold tracking-[-.06em] lg:text-[180px]`}
+		class={`transition mt-4 duration-1000 absolute top-0 left-0  text-gray text-7xl sm:text-[120px] md:text-[150px] font-serif font-bold tracking-[-.06em] lg:text-[180px]`}
 	/>
 </div>
