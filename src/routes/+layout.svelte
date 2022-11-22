@@ -21,8 +21,6 @@
 			api_host: 'https://app.posthog.com'
 		});
 
-		console.log('HERE');
-
 		posthog.capture('my event', { property: 'value' });
 	}
 
