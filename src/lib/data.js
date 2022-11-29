@@ -15,7 +15,7 @@ I’m a web consultant with skills and experience as a <strong class="font-bold"
   >designer</strong
 >,
 <strong class="font-bold">engineer</strong>, and
-<strong class="font-bold">manager</strong>. I’ve been building the web for the past
+<strong class="font-bold">team lead</strong>. I’ve been building the web for the past
 <strong class="font-bold">15 years</strong>
 and am ready for my
 <strong class="font-bold"
