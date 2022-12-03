@@ -15,7 +15,7 @@
 
 	afterNavigate(() => {
 		$isMenuOpen = false;
-		window.scrollTo({ top: 0, behavior: 'auto' });
+		// window.scrollTo({ top: 0, behavior: 'auto' });
 	});
 
 	$: {
@@ -127,7 +127,6 @@
 									<li>
 										<a
 											data-sveltekit-prefetch
-											data-sveltekit-noscroll
 											href={`/case-studies/${caseStudy.slug}`}
 											class="pl-6 py-3 text-white text-xl md:text-3xl block transition-all border-0 hover:border-l-8 border-white underline-offset-8 hover:underline"
 										>
