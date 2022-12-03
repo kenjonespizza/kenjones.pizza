@@ -25,10 +25,7 @@ and am ready for my
 >.
 </p>
 <p class="text-xl lg:text-2xl text-gray/70 leading-normal">
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque
-aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
-pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc
-tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+When not creating for the web, I'm off hanging out with my dog, birding in the woods, riding my bike, or playing video games.  I take pride in my free time and am always looking for new ways to spend it.
 </p>`;
 const cloudinaryConfig = {
 	cloudName: 'kenjones',
