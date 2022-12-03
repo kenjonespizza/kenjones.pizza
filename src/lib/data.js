@@ -325,7 +325,7 @@ const caseStudies = [
 ];
 const cta = {
 	heading: 'I’m currently looking for new opportunities',
-	text: 'After a 7 year stint of successfully running a digital web agency for 7 years, I’m ready for my next challenge. With 15 years experience in <strong class="font-extrabold">design</strong>, <strong class="font-extrabold">engineering</strong>, <strong class="font-extrabold">consulting</strong>, and <strong class="font-extrabold">managing</strong>.' // Can be HTML
+	text: 'After a 7 year stint of successfully running a digital web agency, I’m ready for my next challenge. With 15 years experience in <strong class="font-extrabold">design</strong>, <strong class="font-extrabold">engineering</strong>, <strong class="font-extrabold">consulting</strong>, and <strong class="font-extrabold">managing</strong>.' // Can be HTML
 };
 const copyright = 'KenJonesPizza';
 const meta = {
