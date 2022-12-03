@@ -178,7 +178,7 @@ const caseStudies = [
 				<li><a href="https://vercel.com/">Vercel</a></li>
 				<li><a href="https://sanity.io/">Sanity CMS</a></li>
 				<li><a href="https://opensea.io/">OpenSea</a></li>
-				<li><a href="https://www.etsy.com/">Etsy</a></li>
+				<li><a href="https://www.etsy.com">Etsy</a></li>
 		</ul>
 	</p>`, // can be html
 		button: {
