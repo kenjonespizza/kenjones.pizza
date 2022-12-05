@@ -15,7 +15,7 @@
 
 	afterNavigate(() => {
 		$isMenuOpen = false;
-		// window.scrollTo({ top: 0, behavior: 'auto' });
+		// window.scrollTo({ top: 0, behavior: 'smooth' });
 	});
 
 	$: {
@@ -45,7 +45,7 @@
 					class="rounded-full h-[50px] w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
 				/>
 			</div>
-			<span class="text-4xl font-serif font-extrabold">Ken Jones</span>
+			<span class="text-4xl font-serif font-extrabold">{data.name}</span>
 		</a>
 	</h1>
 
@@ -127,6 +127,10 @@
 									<li>
 										<a
 											data-sveltekit-prefetch
+<<<<<<< HEAD
+=======
+											data-sveltekit-noscroll
+>>>>>>> upstream/main
 											href={`/case-studies/${caseStudy.slug}`}
 											class="pl-6 py-3 text-white text-xl md:text-3xl block transition-all border-0 hover:border-l-8 border-white underline-offset-8 hover:underline"
 										>
