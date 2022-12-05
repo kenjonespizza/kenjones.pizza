@@ -127,10 +127,6 @@
 									<li>
 										<a
 											data-sveltekit-prefetch
-<<<<<<< HEAD
-=======
-											data-sveltekit-noscroll
->>>>>>> upstream/main
 											href={`/case-studies/${caseStudy.slug}`}
 											class="pl-6 py-3 text-white text-xl md:text-3xl block transition-all border-0 hover:border-l-8 border-white underline-offset-8 hover:underline"
 										>
