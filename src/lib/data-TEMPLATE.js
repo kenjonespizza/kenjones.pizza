@@ -1,17 +1,16 @@
-const name = 'Ken Jones';
-const email = 'email@kenjones.pizza';
+const name = 'Bob Ross';
+const email = 'bob@bobross.com';
 const links = {
 	chat: {
 		text: 'Schedule a Chat',
-		url: 'https://calendly.com/kenjonespizza/'
+		url: 'https://calendly.com/BobRoss/'
 	},
-	linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
-	resume:
-		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf' // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
+	linkedIn: 'https://www.linkedin.com/in/bobross/',
+	resume: 'https://d.novoresume.com/images/doc/preview/minimalist-resume-template.png' // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
 };
-const titles = ['🎨 Designer', '🧑🏾‍💻 Engineer', '🐶 Foster Dad', '🕹 Gamer', '🦉 Birder'];
+const titles = ['🎨 Painter', '😊 Happy', '🐶 Dog Lover', '🌲 Nature Lover'];
 const bio = `<p class="font-serif text-3xl lg:text-5xl font-light leading-tight">
-I’m a web consultant with skills and experience as a <strong class="font-bold"
+Hi I'm Bob and Im a painter <strong class="font-bold"
   >designer</strong
 >,
 <strong class="font-bold">engineer</strong>, and
@@ -330,14 +329,14 @@ const cta = {
 	heading: 'I’m currently looking for new opportunities',
 	text: 'After a 7 year stint of successfully running a digital web agency for 7 years, I’m ready for my next challenge. With 15 years experience in <strong class="font-extrabold">design</strong>, <strong class="font-extrabold">engineering</strong>, <strong class="font-extrabold">consulting</strong>, and <strong class="font-extrabold">managing</strong>.' // Can be HTML
 };
-const copyright = 'KenJonesPizza';
+const copyright = 'BobRoss';
 const meta = {
 	favicon: '1',
 	OgImage: '1',
 	title: `${name} | Web designer, developer, specialist`,
 	description: `${name}'s portfolio website.  Email him at: ${email}`,
-	siteName: `KenJonesPizza`,
-	twitterUsername: 'kenjonespizza'
+	siteName: `BobRoss`,
+	twitterUsername: 'bobross'
 };
 const posthog = {
 	key: 'phc_w7KCAXCdTTEQBYQeQMmDhzPBECMCIovl19E4mVIiIT2'
