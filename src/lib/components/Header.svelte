@@ -45,7 +45,7 @@
 					class="rounded-full h-[50px] w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
 				/>
 			</div>
-			<span class="text-4xl font-serif font-extrabold">Ken Jones</span>
+			<span class="text-4xl font-serif font-extrabold">{data.name}</span>
 		</a>
 	</h1>
 
