@@ -1,3 +1,5 @@
+// See data-SAMPLE.js for data structure
+
 const name = '';
 const email = '';
 const links = {};
