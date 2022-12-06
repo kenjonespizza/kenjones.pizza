@@ -7,9 +7,22 @@ const links = {
 	},
 	linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
 	resume:
-		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf' // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
+		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf', // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
+	menu: {
+		linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
+		dribbble: 'https://www.dribbble.com/kenjazzy/',
+		github: 'https://www.github.com/kenjonespizza/',
+		polywork: 'https://poly.me/kenjones'
+	}
 };
-const titles = ['🧑🏾‍💻 Engineer', '🎨 Designer', '🐶 Foster Dad', '🦉 Birder', '🕹 Gamer'];
+const titles = [
+	'🧑🏾‍💻 Engineer',
+	'🎨 Designer',
+	'🐶 Foster Dad',
+	'🦉 Birder',
+	'🌲 Nature Lover',
+	'🕹 Gamer'
+];
 const bio = `<p class="font-serif text-3xl lg:text-5xl font-light leading-tight">
 I’m a web consultant with skills and experience as a <strong class="font-bold"
   >designer</strong
@@ -122,11 +135,15 @@ const caseStudies = [
 	{
 		slug: 'birdables',
 		name: 'Birdable (Passion Project)',
-		mainImage: 'birdables-main',
+		mainImage: {
+			src: 'birdables-main', // Name from Cloudinary
+			alt: 'Birdables Homepage',
+			isBrowserPreview: true
+		},
 		images: [
 			{
 				src: 'birdables-main',
-				alt: 'Birdables Home Page',
+				alt: 'Birdables Homepage',
 				title: 'Homepage',
 				isBrowserPreview: true
 			},
@@ -183,7 +200,11 @@ const caseStudies = [
 	{
 		slug: 'pcs',
 		name: 'PCS Companies',
-		mainImage: 'pcs',
+		mainImage: {
+			src: 'pcs', // Name from Cloudinary
+			alt: 'PCS Homepage',
+			isBrowserPreview: true
+		},
 		images: [
 			{
 				src: 'pcs',
@@ -227,7 +248,11 @@ const caseStudies = [
 	{
 		slug: 'red-ventures',
 		name: 'Red Ventures (Blog & Careers Site)',
-		mainImage: 'rv-blog',
+		mainImage: {
+			src: 'rv-blog', // Name from Cloudinary
+			alt: 'RedVentures Blog',
+			isBrowserPreview: true
+		},
 		images: [
 			{
 				src: 'rv-blog',
@@ -261,7 +286,11 @@ const caseStudies = [
 	{
 		slug: 'fly-usa',
 		name: 'Fly USA',
-		mainImage: 'flyusa-homepage',
+		mainImage: {
+			src: 'flyusa-homepage', // Name from Cloudinary
+			alt: 'Fly USA Homepage',
+			isBrowserPreview: true
+		},
 		images: [
 			{
 				src: 'flyusa-homepage',
@@ -292,7 +321,11 @@ const caseStudies = [
 	{
 		slug: 'daily-hangar',
 		name: 'Daily Hangar',
-		mainImage: 'dailyhangar-homepage',
+		mainImage: {
+			src: 'dailyhangar-homepage', // Name from Cloudinary
+			alt: 'Daily Hangar Homepage',
+			isBrowserPreview: true
+		},
 		images: [
 			{
 				src: 'dailyhangar-homepage',

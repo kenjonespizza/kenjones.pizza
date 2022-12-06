@@ -5,6 +5,8 @@
 	import { browser } from '$app/environment';
 	import { cloudinary } from '$lib/cloudinary';
 	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
+	import Menu from './Menu.svelte';
+	import Links from './Links.svelte';
 
 	const data = getContext('data');
 
@@ -49,40 +51,23 @@
 		</a>
 	</h1>
 
-	<button
-		label="Open Menu"
-		class=""
-		on:click={() => {
-			$isMenuOpen = true;
-		}}
-	>
-		<span class="sr-only">Open Navigation</span>
-		<div
-			class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
-		>
-			<div class="w-full h-[2px] bg-gray" />
-			<div class="w-full h-[2px] bg-gray" />
-			<div class="w-full h-[2px] bg-gray" />
+	<div class="flex gap-8 items-center">
+		<div class=" gap-4 hidden md:flex">
+			<Links sizeClass="h-10" />
 		</div>
-	</button>
-
-	<div
-		class={`fixed z-10 inset-0 w-screen h-screen overflow-hidden ${
-			$isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-		}`}
-	>
-		<div
-			class={`absolute duration-700 transition-all ${
-				$isMenuOpen ? 'left-0' : 'left-[100vw]'
-			} top-0 w-screen h-screen bg-gray p-25 flex flex-col justify-center items-center text-white`}
+		<div class="w-px h-full bg-gray/10" />
+		<button
+			label="Open Menu"
+			class=""
+			on:click={() => {
+				$isMenuOpen = true;
+			}}
 		>
-			<button
-				label="Close Menu"
-				class="absolute top-[50px] right-[25px]"
-				on:click={() => {
-					$isMenuOpen = false;
-				}}
+			<span class="sr-only">Open Navigation</span>
+			<div
+				class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
 			>
+<<<<<<< HEAD
 				<span class="sr-only">Close Navigation</span>
 				<div
 					class="origin-center w-[20px] h-[18px] transition-all group relative hover:rotate-0 group"
@@ -138,7 +123,14 @@
 						</div>
 					</li>
 				</ul>
+=======
+				<div class="w-full h-[2px] bg-gray" />
+				<div class="w-full h-[2px] bg-gray" />
+				<div class="w-full h-[2px] bg-gray" />
+>>>>>>> 894bc271da5f80b250d9cbbda3416e9d0de9fae3
 			</div>
-		</div>
+		</button>
 	</div>
+
+	<Menu />
 </header>
