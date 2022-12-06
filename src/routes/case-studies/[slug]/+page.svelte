@@ -46,7 +46,7 @@
 			</div>
 			{#if data.project?.button?.url}
 				<a
-					class="w-auto justify-center border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
+					class="w-auto justify-center rounded-full border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
 					target="_blank"
 					rel="noreferrer"
 					href={data.project.button.url}
