@@ -5,6 +5,8 @@
 	import { browser } from '$app/environment';
 	import { cloudinary } from '$lib/cloudinary';
 	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
+	import Menu from './Menu.svelte';
+	import Links from './Links.svelte';
 
 	const data = getContext('data');
 
@@ -49,97 +51,28 @@
 		</a>
 	</h1>
 
-	<button
-		label="Open Menu"
-		class=""
-		on:click={() => {
-			$isMenuOpen = true;
-		}}
-	>
-		<span class="sr-only">Open Navigation</span>
-		<div
-			class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
-		>
-			<div class="w-full h-[2px] bg-gray" />
-			<div class="w-full h-[2px] bg-gray" />
-			<div class="w-full h-[2px] bg-gray" />
+	<div class="flex gap-8 items-center">
+		<div class=" gap-4 hidden md:flex">
+			<Links sizeClass="h-10" />
 		</div>
-	</button>
-
-	<div
-		class={`fixed z-10 inset-0 w-screen h-screen overflow-hidden ${
-			$isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-		}`}
-	>
-		<div
-			class={`absolute duration-700 transition-all ${
-				$isMenuOpen ? 'left-0' : 'left-[100vw]'
-			} top-0 w-screen h-screen bg-gray p-25 flex flex-col justify-center items-center text-white`}
+		<div class="w-px h-full bg-gray/10" />
+		<button
+			label="Open Menu"
+			class=""
+			on:click={() => {
+				$isMenuOpen = true;
+			}}
 		>
-			<button
-				label="Close Menu"
-				class="absolute top-[50px] right-[25px]"
-				on:click={() => {
-					$isMenuOpen = false;
-				}}
+			<span class="sr-only">Open Navigation</span>
+			<div
+				class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
 			>
-				<span class="sr-only">Close Navigation</span>
-				<div
-					class="origin-center w-[20px] h-[18px] transition-all group relative hover:rotate-0 group"
-				>
-					<div
-						class="w-[20px] origin-center absolute top-0 left-0 rotate-45 h-[2px] transition duration-1000 bg-white group-hover:rotate-0"
-					/>
-					<div
-						class="w-[20px] origin-center absolute top-0 left-0 -rotate-45 h-[2px] transition duration-1000 bg-white group-hover:-rotate-[540deg]"
-					/>
-				</div>
-			</button>
-
-			<div class="w-full md:max-w-2xl p-[25px]">
-				<span class="block text-2xl">Navigation:</span>
-				<div class="w-full h-px my-6">
-					<div class={`${$isMenuOpen ? 'animate-fillBarH' : ''} bg-white h-full w-0`} />
-				</div>
-				<ul class="text-3xl md:text-6xl font-serif space-y-6">
-					<li>
-						<a
-							data-sveltekit-prefetch
-							data-sveltekit-noscroll
-							href="/"
-							class="text-white block underline-offset-8 hover:underline">Home</a
-						>
-					</li>
-					<li class="group">
-						<span
-							href="/"
-							class="text-white block cursor-default transition group-hover:text-white/30"
-							>Case Studies</span
-						>
-						<div class="relative my-6 ml-6">
-							<div
-								class={`${
-									$isMenuOpen ? 'animate-fillBarV' : ''
-								} absolute top-0 left-0 h-0 w-px bg-white`}
-							/>
-							<ul class="group-hover:border-l-8 border-white transition-all transi mt-6">
-								{#each data.caseStudies as caseStudy}
-									<li>
-										<a
-											data-sveltekit-prefetch
-											data-sveltekit-noscroll
-											href={`/case-studies/${caseStudy.slug}`}
-											class="pl-6 py-3 text-white text-xl md:text-3xl block transition-all border-0 hover:border-l-8 border-white underline-offset-8 hover:underline"
-										>
-											{caseStudy.name}
-										</a>
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</li>
-				</ul>
+				<div class="w-full h-[2px] bg-gray" />
+				<div class="w-full h-[2px] bg-gray" />
+				<div class="w-full h-[2px] bg-gray" />
 			</div>
-		</div>
+		</button>
 	</div>
+
+	<Menu />
 </header>

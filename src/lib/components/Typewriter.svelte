@@ -3,46 +3,53 @@
 	import { data } from '$lib/data';
 	import { browser } from '$app/environment';
 
-	let wrapper;
-	let loaded = false;
+	let text = data.titles[0];
+	let i = 1;
+	const animationIn = [{ opacity: 0 }, { opacity: 1 }];
+
+	const animationInTiming = {
+		duration: 1000,
+		iterations: 1
+	};
+
 	onMount(() => {
 		if (browser) {
-			loaded = true;
-			rotateText(5000);
+			setInterval(() => {
+				text = data.titles[i];
+				i = i === data.titles.length - 1 ? 0 : i + 1;
+			}, 4000);
 		}
 	});
 
-	function rotateText(interval) {
-		let maxCount = data.titles.length - 1;
-		let currCount = 0;
+	function swipittySwap(node, text) {
+		const el = document.createElement('span');
+		el.classList.add('tagline', 'animate-bounce');
+		el.innerText = text;
+		node.animate(animationIn, animationInTiming);
+		node.appendChild(el);
 
-		setInterval(() => {
-			const currEl = document.querySelector(`.line-${currCount}`);
-			const nextIndex = currCount === maxCount ? 0 : currCount + 1;
-			const nextEl = document.querySelector(`.line-${nextIndex}`);
+		return {
+			update(text) {
+				// the value of `bar` has changed
+				const oldEl = node.querySelector('.tagline');
+				node.removeChild(oldEl);
+				const newEl = document.createElement('span');
+				newEl.classList.add('tagline', 'animate-bounce');
+				newEl.innerText = text;
+				node.animate(animationIn, animationInTiming);
+				node.appendChild(newEl);
+			},
 
-			if (currEl && nextEl) {
-				currEl.classList.add('opacity-0');
-				currEl.classList.remove('opacity-100');
-				nextEl.classList.add('opacity-100');
-				nextEl.classList.remove('opacity-0');
-				currCount = nextIndex;
+			destroy() {
+				// the node has been removed from the DOM
 			}
-		}, interval);
+		};
 	}
 </script>
 
-<div class="relative" bind:this={wrapper}>
-	{#if loaded}
-		{#each data.titles as title, i}
-			{#key i}
-				<span
-					class={`tagline line-${i} transition duration-1000 absolute top-0 left-0 ${
-						i === 0 ? 'opcaity-100' : 'opacity-0'
-					} text-gray text-7xl sm:text-[120px] md:text-[150px] font-serif font-bold tracking-[-.06em] lg:text-[180px]`}
-					>{title}</span
-				>
-			{/key}
-		{/each}
-	{/if}
+<div class="relative">
+	<div
+		use:swipittySwap={text}
+		class={`transition mt-4 duration-1000 absolute top-0 left-0  text-gray text-7xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px]  2xl:text-[180px] font-serif font-bold tracking-[-.06em]`}
+	/>
 </div>
