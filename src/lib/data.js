@@ -9,7 +9,7 @@ const links = {
 	resume:
 		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf' // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
 };
-const titles = ['🎨 Designer', '🧑🏾‍💻 Engineer', '🐶 Foster Dad', '🕹 Gamer', '🦉 Birder'];
+const titles = ['🧑🏾‍💻 Engineer', '🎨 Designer', '🐶 Foster Dad', '🦉 Birder', '🕹 Gamer'];
 const bio = `<p class="font-serif text-3xl lg:text-5xl font-light leading-tight">
 I’m a web consultant with skills and experience as a <strong class="font-bold"
   >designer</strong
@@ -52,8 +52,7 @@ const bioImages = [
 const resume = `<!-- Entry -->
 <div class="flex flex-col md:flex-row justify-start gap-6">
 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-						<time datetime="2008-02-14 20:00">October 2015</time> -
-						<time datetime="2008-02-14 20:00">Present</time>
+						2015 - Present
 					</div>
 					<div class="-mt-2 md:mt-auto prose prose-sm">
 						<h3 class="font-serif text-2xl leading-none mb-1	">
@@ -63,27 +62,11 @@ const resume = `<!-- Entry -->
 						
 					</div>
 				</div>
+				
 				<!-- Entry -->
 				<div class="flex flex-col md:flex-row justify-start gap-6">
 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-						<time datetime="2008-02-14 20:00">February 2015 </time> -
-						<time datetime="2008-02-14 20:00">October 2015</time>,<br />
-						<time datetime="2008-02-14 20:00">July 2012</time> -
-						<time datetime="2008-02-14 20:00">October 2013</time>
-					</div>
-					<div class="-mt-2 md:mt-auto prose prose-sm">
-						<h3 class="font-serif text-2xl leading-none mb-1	">
-							<span class="font-bold">Freelance Consultant</span> (Remote)
-						</h3>
-						<h4 class="text-xl font-medium italic">Designer/Engineer</h4>
-						
-					</div>
-				</div>
-				<!-- Entry -->
-				<div class="flex flex-col md:flex-row justify-start gap-6">
-					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-						<time datetime="2008-02-14 20:00">October 2013 </time> -
-						<time datetime="2008-02-14 20:00">February 2015</time>
+						2013 - 2015
 					</div>
 					<div class="-mt-2 md:mt-auto prose prose-sm">
 						<h3 class="font-serif text-2xl leading-none mb-1	">
@@ -96,8 +79,20 @@ const resume = `<!-- Entry -->
 				<!-- Entry -->
 				<div class="flex flex-col md:flex-row justify-start gap-6">
 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-						<time datetime="2008-02-14 20:00">October 2013 </time> -
-						<time datetime="2008-02-14 20:00">February 2015</time>
+						2012 - 2015
+					</div>
+					<div class="-mt-2 md:mt-auto prose prose-sm">
+						<h3 class="font-serif text-2xl leading-none mb-1	">
+							<span class="font-bold">Freelance Consultant</span> (Remote)
+						</h3>
+						<h4 class="text-xl font-medium italic">Designer/Engineer</h4>
+						
+					</div>
+				</div>
+				<!-- Entry -->
+				<div class="flex flex-col md:flex-row justify-start gap-6">
+					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
+						2013 - 2015
 					</div>
 					<div class="-mt-2 md:mt-auto prose prose-sm">
 						<h3 class="font-serif text-2xl leading-none mb-1	">
@@ -111,8 +106,7 @@ const resume = `<!-- Entry -->
 				<!-- Entry -->
 				<div class="flex flex-col md:flex-row justify-start gap-6">
 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-						<time datetime="2008-02-14 20:00">May 2008 </time> -
-						<time datetime="2008-02-14 20:00">April 2012</time>
+						2008 - 2012
 					</div>
 					<div class="-mt-2 md:mt-auto prose prose-sm">
 						<h3 class="font-serif text-2xl leading-none mb-1	">
