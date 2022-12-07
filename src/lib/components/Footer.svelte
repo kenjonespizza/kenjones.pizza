@@ -1,6 +1,6 @@
 <script>
 	import RemixiconLine from 'svelte-remixicon/lib/icons/RemixiconLine.svelte';
-	import HomeLine from 'svelte-remixicon/lib/icons/HomeLine.svelte';
+	import GithubFill from 'svelte-remixicon/lib/icons/GithubFill.svelte';
 
 	import Container from '$lib/components/Container.svelte';
 	import { now } from 'svelte/internal';
@@ -10,6 +10,17 @@
 </script>
 
 <section class="p-10 border-t border-gray-50">
-	<!-- <HomeLine class="w-20 h-20 fill" /> -->
-	<div class="text-center text-gray-500">&copy;{date.getFullYear()} {data.copyright}</div>
+	<div class="text-center text-gray-500 flex justify-center gap-4">
+		<span>&copy;{date.getFullYear()} {data.copyright}</span>
+
+		{#if data?.sourceCode?.showCode}
+			<span>|</span>
+			<a
+				href={data.sourceCode.link}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="underline flex gap-2 items-center"><GithubFill size="20" /> View Source Code</a
+			>
+		{/if}
+	</div>
 </section>
