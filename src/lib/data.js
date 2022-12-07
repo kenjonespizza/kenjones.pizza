@@ -354,6 +354,53 @@ const cta = {
 	heading: 'I’m currently looking for new opportunities',
 	text: 'After a 7 year stint of successfully running a digital web agency, I’m ready for my next challenge. With 15 years experience in <strong class="font-extrabold">design</strong>, <strong class="font-extrabold">engineering</strong>, <strong class="font-extrabold">consulting</strong>, and <strong class="font-extrabold">managing</strong>.' // Can be HTML
 };
+const designs = [
+	{
+		name: 'FlyUSA',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/oYjkKGcGfmwLbPpjBH6uZ8/FlyUSA-Preview?page-id=0%3A1&node-id=508%3A3700&viewport=-583%2C307%2C0.06&scaling=min-zoom',
+		image: {
+			src: 'flyUSA-shot', // From Cloudinary
+			alt: 'Fly USA website preview'
+		}
+	},
+	{
+		name: 'AllPoint Retail Design',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/ecQHIvhnYy52IhrBZufNTr/AllPoint-Preview?page-id=0%3A1&node-id=46%3A3041&viewport=-758%2C205%2C0.08&scaling=min-zoom',
+		image: {
+			src: 'AllPointRetail-shot', // From Cloudinary
+			alt: 'AllPoint Retail website preview'
+		}
+	},
+	{
+		name: 'NES Health Design',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/LxtFGE8tWj5HshtrO1AoBP/NES-Health?page-id=0%3A1&node-id=1%3A2&viewport=733%2C342%2C0.03&scaling=min-zoom',
+		image: {
+			src: 'NES-Health-shot', // From Cloudinary
+			alt: 'NES Health website preview'
+		}
+	},
+	{
+		name: 'Beacon Home Design',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/znXHR8vx00IENmaDSct24C/Beacon-Home-Design?page-id=0%3A1&node-id=4%3A5&viewport=462%2C650%2C0.23&scaling=min-zoom&starting-point-node-id=4%3A5',
+		image: {
+			src: 'beacon-shot', // From Cloudinary
+			alt: 'Beacon Home Design website preview'
+		}
+	},
+	{
+		name: 'Lawrence County Learning Center',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/XleVhUc4ZXpOwadMBx0PwO/Lawrence-County-Learning-Center?page-id=0%3A320&node-id=892%3A519&viewport=381%2C293%2C0.04&scaling=min-zoom&starting-point-node-id=892%3A519',
+		image: {
+			src: 'LCLC-shot', // From Cloudinary
+			alt: 'Lawrence County Learning Center website preview'
+		}
+	}
+];
 const copyright = 'KenJonesPizza';
 const meta = {
 	favicon: '1',
@@ -365,6 +412,10 @@ const meta = {
 };
 const posthog = {
 	key: 'phc_w7KCAXCdTTEQBYQeQMmDhzPBECMCIovl19E4mVIiIT2'
+};
+const sourceCode = {
+	showCode: true,
+	link: 'https://github.com/kenjonespizza/kenjones.pizza'
 };
 
 export const data = {
@@ -380,6 +431,8 @@ export const data = {
 	caseStudies,
 	cloudinaryConfig,
 	cta,
+	designs,
 	copyright,
-	posthog
+	posthog,
+	sourceCode
 };
