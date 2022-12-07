@@ -1,3 +1,9 @@
+# KenJones.🍕
+
+Thanks for checking out my portfolio website's source code. This being a personal project, it's always a WIP and the little non-essential details are just that. There are plenty of updates to be be made, like fully type-checking, but the foundations are there and I will expand upon in time. Thanks and enjoy
+
+---
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
