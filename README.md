@@ -1,6 +1,6 @@
 # KenJones.🍕
 
-Thanks for checking out my portfolio website's source code. This being a personal project, it's always a WIP and the little non-essential details are just that. There are plenty of updates to be be made, like fully type-checking, but the foundations are there and I will expand upon in time. Thanks and enjoy
+Thanks for checking out my portfolio website's source code. This being a personal project, it's always a WIP and the little non-essential details are just that. There are plenty of updates to be made, like fully type-checking, but the foundations are there, and I will expand upon in time. Thanks and enjoy✨!
 
 ---
 
