@@ -137,7 +137,7 @@ const designs = [
 		description: 'Website Design',
 		link: 'https://www.figma.com/proto/oYjkKGcGfmwLbPpjBH6uZ8/FlyUSA-Preview?page-id=0%3A1&node-id=508%3A3700&viewport=-583%2C307%2C0.06&scaling=min-zoom',
 		image: {
-			src: 'flyUSA-shot', // From Cloudinary
+			src: 'FlyUSA-shot', // From Cloudinary
 			alt: 'Fly USA website preview'
 		}
 	},
