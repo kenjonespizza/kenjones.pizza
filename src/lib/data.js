@@ -14,6 +14,7 @@ const cta = {};
 const copyright = '';
 const meta = {};
 const posthog = {};
+const sourceCode = {};
 
 export const data = {
 	name,
@@ -29,5 +30,6 @@ export const data = {
 	cloudinaryConfig,
 	cta,
 	copyright,
-	posthog
+	posthog,
+	sourceCode
 };

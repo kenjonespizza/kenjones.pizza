@@ -115,7 +115,74 @@
 			{/each}
 		</div>
 	</Container>
-	<!-- <Container>
+</section>
+{#if data?.designs?.length}
+	<section class="section space-y-6 lg:space-y-12" id="work">
+		<Container standard>
+			<h2 class="section-heading">Design Examples.</h2>
+			<div class="side flex flex-col items-start gap-6">
+				<div class="grid gap-8">
+					{#each data.designs as design, i}
+						<div>
+							<div class="mb-2 ">
+								<h3 class="font-serif text-2xl font-bold">{design.name}</h3>
+								<p class="text-gray/70 text-lg">
+									{design.description}
+								</p>
+							</div>
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href={design.link}
+								class={`block relative rounded-2xl overflow-hidden transition hover:ring-4 hover:ring-offset-4 hover:ring-offset-white hover:ring-gray`}
+							>
+								<div
+									class="absolute z-10 inset-0 flex gap-2 justify-center items-center w-full h-full bg-gray/50 transition opacity-0 hover:opacity-100 group"
+								>
+									<div
+										class="flex gap-3 justify-center items-center translate-y-20 rotate-45 transition group-hover:translate-y-0 group-hover:rotate-0"
+									>
+										<p class="text-white text-xl font-bold">View Preview:</p>
+										<div
+											class="aspect-square bg-gray p-2 w-12 h-12 flex items-center justfy-center rounded-lg"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 38 57"
+												class="h-full w-full"
+											>
+												<path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" />
+												<path
+													fill="#0acf83"
+													d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"
+												/>
+												<path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" />
+												<path
+													fill="#f24e1e"
+													d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"
+												/>
+												<path
+													fill="#a259ff"
+													d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"
+												/>
+											</svg>
+										</div>
+									</div>
+								</div>
+
+								<img
+									src={imageAutoFormatAndQuality(design.image.src)}
+									class={`rounded-2xl aspect-[4/3] object-cover transform transition`}
+									alt={design.image.alt}
+								/>
+							</a>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</Container>
+	</section>
+{/if}
+<!-- <Container>
 		<CTA />
 	</Container> -->
-</section>
