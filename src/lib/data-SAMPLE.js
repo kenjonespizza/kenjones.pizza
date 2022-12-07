@@ -131,6 +131,26 @@ const cta = {
 	heading: 'I’m currently looking for new opportunities',
 	text: 'I love to paint what can I say.  I love painting <strong class="font-extrabold">nature</strong>, <strong class="font-extrabold">birds</strong>, <strong class="font-extrabold">water</strong>, and <strong class="font-extrabold">paradise</strong>.' // Can be HTML
 };
+const designs = [
+	{
+		name: 'FlyUSA',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/oYjkKGcGfmwLbPpjBH6uZ8/FlyUSA-Preview?page-id=0%3A1&node-id=508%3A3700&viewport=-583%2C307%2C0.06&scaling=min-zoom',
+		image: {
+			src: 'flyUSA-shot', // From Cloudinary
+			alt: 'Fly USA website preview'
+		}
+	},
+	{
+		name: 'AllPoint Retail Design',
+		description: 'Website Design',
+		link: 'https://www.figma.com/proto/ecQHIvhnYy52IhrBZufNTr/AllPoint-Preview?page-id=0%3A1&node-id=46%3A3041&viewport=-758%2C205%2C0.08&scaling=min-zoom',
+		image: {
+			src: 'AllPointRetail-shot', // From Cloudinary
+			alt: 'AllPoint Retail website preview'
+		}
+	}
+];
 const copyright = 'BobbiRoss';
 const meta = {
 	favicon: 'sample-1',
@@ -142,6 +162,10 @@ const meta = {
 };
 const posthog = {
 	key: '' // PostHog Analytics Key EX: phc_asdfasdfasdfasdfsdfsd
+};
+const sourceCode = {
+	showCode: true,
+	link: 'https://github.com/kenjonespizza/kenjones.pizza'
 };
 
 export const data = {
@@ -157,6 +181,8 @@ export const data = {
 	caseStudies,
 	cloudinaryConfig,
 	cta,
+	designs,
 	copyright,
-	posthog
+	posthog,
+	sourceCode
 };
