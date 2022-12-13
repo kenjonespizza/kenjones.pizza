@@ -41,6 +41,9 @@
 	<div class="mt-10 grid grid-cols-1 lg:grid-cols-7 gap-12">
 		<div class="lg:col-span-3 space-y-6">
 			<div class="prose prose-xl">
+				<a href="/#work" class="pb-2 block text-sm transition-all hover:pl-2"
+					>&lt; Back to work samples</a
+				>
 				<h1 class="font-serif text-5xl font-bold">{data.project.name}</h1>
 				{@html data.project.longDescription}
 			</div>
@@ -71,7 +74,7 @@
 							<Mock src={image.src} alt={image.alt} title={image.title} />
 						{:else}
 							<button
-								class="mt-2 transition hover:ring-4 ring-gray ring-offset-2 rounded-2xl overflow-hidden"
+								class="mt-2 transition rounded-lg hover:ring hover:ring-offset-2 hover:ring-gray hover:ring-offset-white overflow-hidden"
 								on:click={() => {
 									$isLightBoxOpen = true;
 									$CurrentLightBoxImageSrc = image.src;
@@ -89,6 +92,43 @@
 				{/key}
 			{/each}
 		</div>
-	</div></Container
->
+	</div>
+</Container>
+
+<div class="border-t border-gray-50 py-20 mt-20">
+	<Container>
+		<h2 class="font-serif font-bold text-3xl mb-6">View More Work</h2>
+		<div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+			{#each data.caseStudies as project, i}
+				{#if project.slug !== data.project.slug}
+					<div class="flex gap-2 flex-col">
+						{#if project.mainImage.isBrowserPreview}
+							<Mock
+								noScroll
+								src={project.mainImage.src}
+								alt={project.mainImage.alt}
+								showFullScreenButton={false}
+								href={`/case-studies/${project.slug}`}
+							/>
+						{:else}
+							<a
+								href={`/case-studies/${project.slug}`}
+								class="transition rounded-lg hover:ring hover:ring-offset-2 hover:ring-gray hover:ring-offset-white"
+							>
+								<img
+									src={imageAutoFormatAndQuality(project.mainImage.src)}
+									alt={project.mainImage.alt}
+									class="aspect-[371/248] object-cover object-top"
+								/>
+							</a>
+						{/if}
+						<div>
+							<h3 class="font-serif text-xl font-bold">{project.name}</h3>
+						</div>
+					</div>
+				{/if}
+			{/each}
+		</div>
+	</Container>
+</div>
 <LightBox />

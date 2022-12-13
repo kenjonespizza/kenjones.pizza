@@ -80,21 +80,21 @@
 
 				<!-- <Mock src={project.mainImage} /> -->
 				{#if project.mainImage.isBrowserPreview}
-					<Mock src={project.mainImage.src} alt={project.mainImage.alt} />
+					<Mock
+						src={project.mainImage.src}
+						alt={project.mainImage.alt}
+						href={`/case-studies/${project.slug}`}
+					/>
 				{:else}
-					<button
-						class="mt-2 transition hover:ring-4 ring-gray ring-offset-2 rounded-2xl overflow-hidden"
-						on:click={() => {
-							$isLightBoxOpen = true;
-							$CurrentLightBoxImageSrc = project.mainImage.src;
-							$CurrentLightBoxImageAlt = project.mainImage.alt;
-						}}
+					<a
+						href={`/case-studies/${project.slug}`}
+						class="mt-2 ring-gray ring-offset-2 overflow-hidden transition rounded-lg hover:ring hover:ring-offset-2 hover:ring-gray hover:ring-offset-white"
 					>
 						<img
 							src={imageAutoFormatAndQuality(project.mainImage.src)}
 							alt={project.mainImage.alt}
 						/>
-					</button>
+					</a>
 				{/if}
 				<a
 					class="w-auto justify-center rounded-full  border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
@@ -183,6 +183,6 @@
 		</Container>
 	</section>
 {/if}
-<!-- <Container>
-		<CTA />
-	</Container> -->
+<Container>
+	<CTA />
+</Container>
