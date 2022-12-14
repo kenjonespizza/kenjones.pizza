@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const name = 'Ken Jones';
 const email = 'email@kenjones.pizza';
 const links = {
@@ -418,6 +419,8 @@ const sourceCode = {
 	link: 'https://github.com/kenjonespizza/kenjones.pizza'
 };
 
+=======
+>>>>>>> 9aec4eb49bd89fde7562f93e7c8477bc2beeb2d4
 export const data = {
 	name,
 	email,
@@ -436,3 +439,39 @@ export const data = {
 	posthog,
 	sourceCode
 };
+
+// // See data-SAMPLE.js for data structure
+
+// const name = '';
+// const email = '';
+// const links = {};
+// const titles = [];
+// const bio = ``;
+// const cloudinaryConfig = {};
+// const logoImage = {};
+// const bioImages = [];
+// const resume = ``;
+// const caseStudies = [];
+// const cta = {};
+// const copyright = '';
+// const meta = {};
+// const posthog = {};
+// const sourceCode = {};
+
+// export const data = {
+// 	name,
+// 	email,
+// 	titles,
+// 	bio,
+// 	links,
+// 	logoImage,
+// 	resume,
+// 	bioImages,
+// 	meta,
+// 	caseStudies,
+// 	cloudinaryConfig,
+// 	cta,
+// 	copyright,
+// 	posthog,
+// 	sourceCode
+// };
