@@ -58,7 +58,7 @@
 		on:click={() => {
 			scrollToElementById('work');
 		}}
-		class="absolute bottom-[-80px] w-auto justify-center rounded-full border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
+		class="absolute bottom-[-100px] w-auto justify-center rounded-full border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
 		>See Work</button
 	>
 </div>

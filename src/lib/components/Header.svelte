@@ -52,7 +52,7 @@
 	</h1>
 
 	<div class="flex gap-8 items-center">
-		<div class=" gap-4 hidden md:flex items-center">
+		<div class="gap-4 hidden md:flex items-center">
 			{#if data?.links?.resume}
 				<a target="_blank" rel="noreferrer" href={data.links.resume}
 					><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
