@@ -25,7 +25,7 @@
 >
 	<div
 		class={`absolute lg:flex lg:items-center w-screen bg-gray duration-700 transition-all overflow-scroll ${
-			$isMenuOpen ? 'left-0' : 'left-[100vw]'
+			$isMenuOpen ? 'left-0' : 'left-[100%]'
 		} top-0 w-full h-full p-25 flex flex-col justify-center items-center text-white`}
 	>
 		<button
