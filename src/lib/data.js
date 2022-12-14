@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const name = 'Ken Jones';
 const email = 'email@kenjones.pizza';
 const links = {
@@ -419,8 +418,6 @@ const sourceCode = {
 	link: 'https://github.com/kenjonespizza/kenjones.pizza'
 };
 
-=======
->>>>>>> 9aec4eb49bd89fde7562f93e7c8477bc2beeb2d4
 export const data = {
 	name,
 	email,
