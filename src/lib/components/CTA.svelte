@@ -48,7 +48,7 @@
 					href={data.links.resume}
 					rel="noreferrer"
 					target="_blank"
-					class="underline font-mediumm transition hover:text-primary">View Resume</a
+					class="underline font-medium transition hover:text-primary">View Resume</a
 				>
 			</div>
 		</div>
