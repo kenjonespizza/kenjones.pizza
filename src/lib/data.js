@@ -16,7 +16,7 @@ const links = {
 	}
 };
 const titles = [
-	'🧑🏾‍💻 Engineer',
+	'🧑🏾‍💻 Front-End Dev',
 	'🎨 Designer',
 	'🐶 Foster Dad',
 	'🦉 Birder',
