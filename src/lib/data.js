@@ -7,7 +7,7 @@ const links = {
 	},
 	linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
 	resume:
-		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Ken-Jones-Resume.pdf', // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
+		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Resume-Ken-Jones.pdf', // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
 	menu: {
 		linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
 		dribbble: 'https://www.dribbble.com/kenjazzy/',
