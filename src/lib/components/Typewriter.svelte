@@ -51,7 +51,7 @@
 <div class="relative">
 	<div
 		use:swipittySwap={text}
-		class={`relative transition mt-4 duration-1000 absolute top-0 left-0  text-gray text-7xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px]  2xl:text-[180px] font-serif font-bold tracking-[-.06em]`}
+		class={`relative transition mt-4 duration-1000 absolute top-0 left-0 text-gray text-5xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px]  2xl:text-[180px] font-serif font-bold tracking-[-.06em]`}
 	/>
 
 	<button
