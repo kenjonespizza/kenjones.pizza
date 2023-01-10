@@ -44,14 +44,14 @@
 				<img
 					src={convertToSquareimageAutoFormatAndQuality(data.logoImage.src)}
 					alt="Ken Jones Headshot"
-					class="rounded-full h-[50px] w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
+					class="rounded-full max-h-[50px] max-w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
 				/>
 			</div>
-			<span class="text-4xl font-serif font-extrabold">{data.name}</span>
+			<span class="text-2xl lg:text-4xl font-serif font-extrabold">{data.name}</span>
 		</a>
 	</h1>
 
-	<div class="flex gap-8 items-center">
+	<div class="flex gap-4 md:gap-8 items-center">
 		<div class="gap-4 hidden md:flex items-center">
 			{#if data?.links?.resume}
 				<a target="_blank" rel="noreferrer" href={data.links.resume}

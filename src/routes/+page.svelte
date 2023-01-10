@@ -5,6 +5,7 @@
 	import Mock from '$lib/components/Mock.svelte';
 	import Gallery from '$lib/components/Gallery.svelte';
 	import LightBox from '$lib/components/LightBox.svelte';
+	import Logos from '$lib/components/Logos.svelte';
 
 	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
 	import { imageAutoFormatAndQuality } from '$lib/utils';
@@ -36,6 +37,10 @@
 <LightBox />
 
 <Hero />
+
+{#if data.logos}
+	<Logos />
+{/if}
 
 <section class="section space-y-6 lg:space-y-12" id="about">
 	<Container standard>
