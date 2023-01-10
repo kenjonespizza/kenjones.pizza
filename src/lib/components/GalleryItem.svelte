@@ -1,7 +1,6 @@
 <script>
 	import { getContext } from 'svelte';
 	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
-	import { cloudinary } from '$lib/cloudinary';
 	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
 	const data = getContext('data');
 
