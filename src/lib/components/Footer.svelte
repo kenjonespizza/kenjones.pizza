@@ -1,9 +1,5 @@
 <script>
-	import RemixiconLine from 'svelte-remixicon/lib/icons/RemixiconLine.svelte';
-	import GithubFill from 'svelte-remixicon/lib/icons/GithubFill.svelte';
-
-	import Container from '$lib/components/Container.svelte';
-	import { now } from 'svelte/internal';
+	import GithubFill from 'svelte-remixicon/RiGithubFill.svelte';
 	import { data } from '$lib/data';
 
 	const date = new Date();

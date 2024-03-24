@@ -6,8 +6,7 @@ const links = {
 		url: 'https://calendly.com/kenjonespizza/'
 	},
 	linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
-	resume:
-		'https://res.cloudinary.com/kenjones/image/upload/v1668494839/kenjones.pizza/Resume-Ken-Jones.pdf', // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
+	resume: 'https://res.cloudinary.com/kenjones/image/upload/v1711254193/Resume-Ken-Jones.pdf', // If placing in the static dir, use /resume/YOUR_RESUME.pdf.  Otherwise any old URL will do.
 	menu: {
 		linkedIn: 'https://www.linkedin.com/in/kenjazzyjones/',
 		dribbble: 'https://www.dribbble.com/kenjazzy/',
@@ -65,7 +64,21 @@ const bioImages = [
 const resume = `<!-- Entry -->
 <div class="flex flex-col md:flex-row justify-start gap-6">
 					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
-						2015 - Present
+						2023 - Present
+					</div>
+					<div class="-mt-2 md:mt-auto prose prose-sm">
+						<h3 class="font-serif text-2xl leading-none mb-1	">
+							<span class="font-bold">Sanity.io</span>
+						</h3>
+						<h4 class="text-xl font-medium italic">Senior Solution Engineer/Architect</h4>
+						
+					</div>
+				</div>
+
+				<!-- Entry -->
+				<div class="flex flex-col md:flex-row justify-start gap-6">
+					<div class="-translate-x-3 md:translate-x-0 min-w-[200px] text-gray/70 text-sm">
+						2015 - 2023
 					</div>
 					<div class="-mt-2 md:mt-auto prose prose-sm">
 						<h3 class="font-serif text-2xl leading-none mb-1	">
