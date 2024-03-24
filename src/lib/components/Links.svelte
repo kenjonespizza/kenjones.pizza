@@ -1,9 +1,9 @@
 <script>
 	import { getContext } from 'svelte';
 
-	import LinkedinFill from 'svelte-remixicon/lib/icons/LinkedinFill.svelte';
-	import DribbbleFill from 'svelte-remixicon/lib/icons/DribbbleFill.svelte';
-	import GithubFill from 'svelte-remixicon/lib/icons/GithubFill.svelte';
+	import LinkedinFill from 'svelte-remixicon/RiLinkedinFill.svelte';
+	import DribbbleFill from 'svelte-remixicon/RiDribbbleFill.svelte';
+	import GithubFill from 'svelte-remixicon/RiGithubFill.svelte';
 
 	const data = getContext('data');
 
@@ -13,7 +13,7 @@
 {#if data?.links?.menu?.linkedIn}
 	<a
 		href={data?.links.menu?.linkedIn}
-		class="transition rounded "
+		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -26,7 +26,7 @@
 {#if data?.links?.menu?.dribbble}
 	<a
 		href={data?.links.menu?.dribbble}
-		class="transition rounded "
+		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -39,7 +39,7 @@
 {#if data?.links?.menu?.github}
 	<a
 		href={data?.links.menu?.github}
-		class="transition rounded "
+		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
@@ -52,7 +52,7 @@
 {#if data?.links?.menu?.polywork}
 	<a
 		href={data?.links.menu?.polywork}
-		class="transition rounded "
+		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
