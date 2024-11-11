@@ -1,0 +1,205 @@
+---
+export interface Props {
+  title: string;
+}
+
+import Side from "../components/Side.astro";
+import Tools from "../components/Tools.svelte";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-gray text-grey dark:text-white font-sans">
+    <div
+      class="fixed w-screen h-screen inset-0 bg-[url('/images/code-bg.png')] bg-cover bg-fixed"
+    >
+    </div>
+    <div class="page-wrapper relative">
+      <div class="flex relative gap-20">
+        <Side />
+        <Tools client:load />
+        <slot name="hero" />
+      </div>
+
+      <slot />
+    </div>
+  </body>
+</html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    // if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    //   return "dark";
+    // }
+    return "dark";
+  })();
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
+
+<style is:global>
+  /* Unscoped, delivered as-is to the browser. */
+
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 100;
+    src: url("/fonts/greycliff/GreycliffCF-Thin.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Thin.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 100;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-ThinOblique.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Thin.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 200;
+    src: url("/fonts/greycliff/GreycliffCF-ExtraLight.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-ExtraLight.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 200;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-ExtraLightOblique.woff2")
+        format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-ExtraLight.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 300;
+    src: url("/fonts/greycliff/GreycliffCF-Light.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Light.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 300;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-LightOblique.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Light.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 400;
+    src: url("/fonts/greycliff/GreycliffCF-Regular.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Regular.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 400;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-RegularOblique.woff2")
+        format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Regular.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 500;
+    src: url("/fonts/greycliff/GreycliffCF-Medium.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Medium.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 500;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-MediumOblique.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Medium.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 600;
+    src: url("/fonts/greycliff/GreycliffCF-DemiBold.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-DemiBold.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 600;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-DemiBoldOblique.woff2")
+        format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-DemiBold.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 700;
+    src: url("/fonts/greycliff/GreycliffCF-Bold.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Bold.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 700;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-BoldOblique.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Bold.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 800;
+    src: url("/fonts/greycliff/GreycliffCF-ExtraBold.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-ExtraBold.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 800;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-ExtraBoldOblique.woff2")
+        format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-ExtraBold.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 900;
+    src: url("/fonts/greycliff/GreycliffCF-Heavy.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Heavy.woff") format("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GreycliffCF";
+    font-weight: 900;
+    font-style: italic;
+    src: url("/fonts/greycliff/GreycliffCF-HeavyOblique.woff2") format("woff2"),
+      url("/fonts/greycliff/GreycliffCF-Heavy.woff") format("woff");
+    font-display: swap;
+  }
+
+  body {
+    font-family: GreycliffCF, system-ui, sans-serif;
+    @apply bg-white antialiased;
+  }
+</style>

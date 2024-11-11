@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HomeHero from "../components/HomeHero.svelte";
+import BlockQuote from "../components/BlockQuote.astro";
+import Posts from "../components/Posts.astro";
+
+const query = `{
+  user(username: "kenjonespizza") {
+    publication {
+      posts(page: 0) {
+       slug
+       title
+       brief
+       coverImage
+      }
+    }
+  }
+}`;
+
+const apiUrl: string = "https://gql.hashnode.com";
+
+const response = await fetch(apiUrl, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query,
+  }),
+});
+
+const json = await response.json();
+const posts = json?.data?.user?.publication?.posts
+  ? json.data.user.publication.posts
+  : [];
+---
+
+<Layout title="Welcome to Astro.">
+  <HomeHero client:load slot="hero" />
+
+  <div class="relative container -translate-y-20 pl-20 pr-28">
+    <img
+      src="images/ice-cream.svg"
+      alt="Ice Cream"
+      class="absolute right-0 -bottom-20"
+    />
+    <div class="bg-frosting shadow-big-box-frosting rounded-3xl px-20 py-32">
+      <div class="space-y-16">
+        <h2 class="font-black text-6xl text-gray">
+          I’m currently seeking an amazing company to work for
+        </h2>
+        <div class="flex gap-8 justify-between">
+          <BlockQuote
+            quote="Yes, I’ll accept compensation in ice cream."
+            name="Ken Jones"
+          />
+          <div class="flex flex-col gap-2">
+            <a
+              class="px-10 [text-shadow:_0_2px_1px_rgb(0_0_0_/_40%)] py-4 bg-gray rounded-lg text-white font-code font-xl font-bold shadow-lg whitespace-nowrap"
+              href="/">download(resume)</a
+            >
+            <a
+              class="px-10 [text-shadow:_0_2px_1px_rgb(0_0_0_/_40%)] py-4 bg-gray rounded-lg text-white font-code font-xl font-bold shadow-lg whitespace-nowrap"
+              href="/">email(“Ken Jones”)</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img
+    src="images/Birdables-banner.png"
+    alt="Birdables"
+    class="w-full mt-32 relative z-10"
+  />
+
+  <div class="relative z-0 -translate-y-10">
+    <div
+      class="transition bg-sauce dark:bg-berry shadow-big-box-berry h-full absolute top-0 left-0 w-[28%]"
+    >
+    </div>
+    <div class="relative container pt-32">
+      <h2 class="font-black text-6xl text-white text-center">
+        Digital Journal
+      </h2>
+      <div class="mt-12">
+        <Posts {posts} />
+      </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </div>
+</Layout>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

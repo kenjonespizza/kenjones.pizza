@@ -1,0 +1,11 @@
+---
+const { quote, name } = Astro.props;
+---
+
+<div class="flex gap-2">
+  <span class="italic text-6xl font-medium text-gray -translate-y-3">“</span>
+  <blockquote class="text-3xl font-medium text-gray flex flex-col gap-3">
+    <span class="block font-medium italic">{quote}</span>
+    <cite class="text-2xl font-bold self-end">- {name}</cite>
+  </blockquote>
+</div>
