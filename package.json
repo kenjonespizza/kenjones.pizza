@@ -1,24 +1,25 @@
 {
-  "name": "@example/basics",
+  "name": "ken-jones-pizza",
   "type": "module",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^2.0.0",
-    "@astrojs/tailwind": "^3.0.0",
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.2",
-    "nanostores": "^0.7.1",
-    "svelte": "^3.54.0",
-    "tailwindcss": "^3.0.24"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@designbycode/tailwindcss-text-stroke": "^1.2.1",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro": "^5.0.0-beta.7",
+    "highlight.js": "^11.10.0",
+    "nanostores": "^0.11.3",
+    "tailwind-clip-path": "^1.0.0",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
   }
 }

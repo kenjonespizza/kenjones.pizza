@@ -5,19 +5,22 @@ import Logo from "./Logo.astro";
 <div
   class="my-[50px] ml-[50px] transition dark:text-white flex flex-col gap-12 w-[50px]"
 >
-  <div class="">
+  <a
+    href="/"
+    class="transition-transform hover:rotate-[20deg] origin-top-right duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)]"
+  >
     <Logo />
-  </div>
-  <nav class="flex items-center gap-12 rotate-90">
-    <a class="block font-bold text-[22px]" href="/">Posts</a>
+  </a>
+  <nav class="flex items-center gap-8 rotate-90">
+    <a class="block font-bold text-lg" href="/">Posts</a>
     <div>
       <div class="flex w-[20px] h-[2px] bg-sauce"></div>
     </div>
-    <a class="block font-bold text-[22px]" href="/">Media</a>
+    <a class="block font-bold text-lg" href="/">Media</a>
     <div>
       <div class="flex w-[20px] h-[2px] bg-cheese"></div>
     </div>
-    <a class="block font-bold text-[22px]" href="/">Portfolio</a>
+    <a class="block font-bold text-lg" href="/">Portfolio</a>
     <div>
       <div class="flex w-[20px] h-[2px] bg-berry"></div>
     </div>

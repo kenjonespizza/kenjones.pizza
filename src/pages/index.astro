@@ -1,92 +1,121 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import HomeHero from "../components/HomeHero.svelte";
-import BlockQuote from "../components/BlockQuote.astro";
-import Posts from "../components/Posts.astro";
+import kenJonesHeadshot from "../../public/images/ken-jones.jpg";
 
-const query = `{
-  user(username: "kenjonespizza") {
-    publication {
-      posts(page: 0) {
-       slug
-       title
-       brief
-       coverImage
-      }
-    }
-  }
-}`;
-
-const apiUrl: string = "https://gql.hashnode.com";
-
-const response = await fetch(apiUrl, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    query,
-  }),
-});
-
-const json = await response.json();
-const posts = json?.data?.user?.publication?.posts
-  ? json.data.user.publication.posts
-  : [];
+const tab = "&nbsp;&nbsp;";
 ---
 
 <Layout title="Welcome to Astro.">
-  <HomeHero client:load slot="hero" />
+  <div class="h-screen w-full flex items-center" slot="hero">
+    <!-- Right Side -->
+    <!-- <div
+			class="transition bg-cheese shadow-big-box-cheese h-full absolute right-0 w-[28%]"
+		/> -->
+    <svg
+      class="h-full absolute right-0 w-auto"
+      width="574"
+      height="1258"
+      viewBox="0 0 574 1258"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M300 0H574V1258H0L300 0Z" fill="#FFCA28"></path>
+    </svg>
 
-  <div class="relative container -translate-y-20 pl-20 pr-28">
-    <img
-      src="images/ice-cream.svg"
-      alt="Ice Cream"
-      class="absolute right-0 -bottom-20"
-    />
-    <div class="bg-frosting shadow-big-box-frosting rounded-3xl px-20 py-32">
-      <div class="space-y-16">
-        <h2 class="font-black text-6xl text-gray">
-          I’m currently seeking an amazing company to work for
-        </h2>
-        <div class="flex gap-8 justify-between">
-          <BlockQuote
-            quote="Yes, I’ll accept compensation in ice cream."
-            name="Ken Jones"
-          />
-          <div class="flex flex-col gap-2">
-            <a
-              class="px-10 [text-shadow:_0_2px_1px_rgb(0_0_0_/_40%)] py-4 bg-gray rounded-lg text-white font-code font-xl font-bold shadow-lg whitespace-nowrap"
-              href="/">download(resume)</a
+    <!-- Middle -->
+
+    <div
+      class="relative flex justify-start items-center min-w-[617px] w-[80vw] min-h-[69vh]"
+    >
+      <Image
+        class="absolute shadow-big-box-gray right-0 top-auto w-auto max-h-[69vh] max-w-[50vw] aspect-auto rounded-full border-20 border-gray"
+        alt="Ken Jones Pizza"
+        src={kenJonesHeadshot}
+      />
+      <div class="relative h-auto flex flex-wrap gap-2 transform">
+        <div class="relative">
+          <h2
+            class="relative text-white text-4xl font-bold text-[90px] leading-[90px] text-stroke-[20px] text-stroke-gray"
+            style={{ paintOrder: "stroke fill" }}
+          >
+            <div
+              class="transform -skew-x-12 -translate-y-[15%] translate-x-[30px] h-[150%] w-0 transition-all duration-500 ease-[cubic-bezier(.9,1.75,.72,1)] bg-sauce absolute right-0 top-auto rounded-2xl border-10 border-gray"
+              id="load-skew"
             >
-            <a
-              class="px-10 [text-shadow:_0_2px_1px_rgb(0_0_0_/_40%)] py-4 bg-gray rounded-lg text-white font-code font-xl font-bold shadow-lg whitespace-nowrap"
-              href="/">email(“Ken Jones”)</a
+            </div>
+            <span class="relative">KenJonesPizza</span>
+          </h2>
+          <a
+            href="/about"
+            class="absolute -right-20 top-[calc(100%+5px)] inline-flex gap-3 text-gray bg-cheese hover:bg-berry active:hover:bg-icecream transition-all ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] duration-[.3s] group transform -skew-x-12 border-10 border-gray rounded-2xl px-6 py-3 hover:scale-105 font-code font-extrabold text-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 group-hover:fill-gray transition-colors"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              ><path
+                d="M10.9999 12L3.92886 19.0711L2.51465 17.6569L8.1715 12L2.51465 6.34317L3.92886 4.92896L10.9999 12ZM10.9999 19H20.9999V21H10.9999V19Z"
+              ></path></svg
             >
+            <span
+              class="transform skew-x-12 block group-hover:text-gray transition-colors"
+              >learnMore()</span
+            >
+          </a>
+        </div>
+        <div class="basis-100 w-full"></div>
+
+        <div class="relative">
+          <div class="text-white font-code text-lg font-semibold">
+            <span class="text-cheese">let</span> learnMore <span
+              class="text-sauce">=</span
+            >
+            {"( 🍕 )"}
+            <span class="text-sauce">{"=>"}</span>
+            {"{"}<br />
+            &nbsp;
+            <span class="text-icecream">if</span>
+            <span class="text-sauce">(</span>🍕.toppings.<span
+              class="text-berry">includes</span
+            >(🍍)<span class="text-sauce">)</span>
+            <span class="text-icecream">{"{"}</span><br />
+            <span set:html={tab + tab} /><span class="text-berry">return</span>
+            <span class="text-cheese">"</span>Ken is a designer,<br />
+            <span set:html={tab + tab} />developer, and birder<span
+              class="text-cheese">"</span
+            ><span class="text-sauce">;</span><br />
+            <span set:html={tab} /><span class="text-icecream">}</span><br />
+            <span class="">}</span>
           </div>
         </div>
+
+        <!-- <div class="text-white relative">
+				<pre><code class=" font-code font-medium text-[20px]"
+						>{code_sample}</code
+					></pre>
+			</div> -->
       </div>
     </div>
   </div>
-  <img
-    src="images/Birdables-banner.png"
-    alt="Birdables"
-    class="w-full mt-32 relative z-10"
-  />
 
-  <div class="relative z-0 -translate-y-10">
+  <div class="relative bg-icecream text-white h-64">
     <div
-      class="transition bg-sauce dark:bg-berry shadow-big-box-berry h-full absolute top-0 left-0 w-[28%]"
+      class="absolute inset-0 bg-icecream -skew-y-2 transform origin-top-left"
     >
+      <div class="absolute left-0 w-full h-[20px] bg-gray -top-[10px]"></div>
     </div>
-    <div class="relative container pt-32">
-      <h2 class="font-black text-6xl text-white text-center">
-        Digital Journal
-      </h2>
-      <div class="mt-12">
-        <Posts {posts} />
-      </div>
-    </div>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <h1 class="relative text-center pt-20 text-2xl">Angled Div</h1>
   </div>
 </Layout>
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const content = document.getElementById("load-skew");
+    if (content) {
+      content.classList.remove("w-0");
+      content.classList.add("w-[44%]");
+    }
+  });
+</script>

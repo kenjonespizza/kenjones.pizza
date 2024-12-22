@@ -1,19 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
 
 const defaultTheme = require("tailwindcss/defaultTheme");
 const typography = require("@tailwindcss/typography");
 const lineClamp = require("@tailwindcss/line-clamp");
 const forms = require("@tailwindcss/forms");
+const stroke = require("@designbycode/tailwindcss-text-stroke");
+const clipPath = require("tailwind-clip-path");
 
-const config = {
-  darkMode: "class",
+export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     container: {
@@ -29,12 +23,15 @@ const config = {
         20: "20px",
       },
       boxShadow: {
-        "big-box-frosting":
+        "big-box-icecream":
           "0px -2px 5px rgba(0, 0, 0, 0.25), 0px 2px 5px rgba(0, 0, 0, 0.25), 0px 0px 80px rgba(253, 168, 243, 0.4);",
         "big-box-cheese":
           "0px -2px 5px rgba(0, 0, 0, 0.25), 0px 2px 5px rgba(0, 0, 0, 0.25), 0px 0px 80px rgba(255, 202, 40, 0.4);",
         "big-box-berry":
           "0px -2px 5px rgba(0, 0, 0, 0.25), 0px 2px 5px rgba(0, 0, 0, 0.25), 0px 0px 80px #3BD4E9;",
+      },
+      clipPath: {
+        angled: "polygon(0 40px, 100% 0%, 100% 100%, 0 100%)",
       },
       colors: {
         gray: {
@@ -64,19 +61,6 @@ const config = {
           700: "#B0070D",
           800: "#760509",
           900: "#3B0204",
-        },
-        frosting: {
-          50: "#FFF5FE",
-          100: "#FFF0FD",
-          200: "#FEDCFA",
-          300: "#FECDF8",
-          400: "#FDB9F5",
-          500: "#FDA8F3",
-          DEFAULT: "#FDA8F3",
-          600: "#FB56E8",
-          700: "#F906DD",
-          800: "#A50492",
-          900: "#55024B",
         },
         cheese: {
           50: "#FFFAEB",
@@ -133,6 +117,9 @@ const config = {
           "100%": { height: "100%" },
         },
       },
+      skew: {
+        24: "24deg",
+      },
       spacing: {
         18: "4.5rem",
         112: "28rem",
@@ -149,7 +136,5 @@ const config = {
       // })
     },
   },
-  plugins: [forms, typography, lineClamp],
+  plugins: [forms, typography, lineClamp, stroke, clipPath],
 };
-
-module.exports = config;
