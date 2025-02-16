@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-sauce: oklch(65% 0.236 22.5);
+	--color-berry: oklch(79.2% 0.136 208.6);
+	--color-cheese: oklch(86.2% 0.168 88.3);
+	--color-gum: oklch(81.7% 0.158565 330.9);
+	--color-light-pep: oklch(69.2% 0.19 28.9);
+	--color-light: oklch(97% 0.003 264.5);
+	--color-dark: oklch(18.2% 0.013 264.2);
+
+	--color-primary: var(--color-sauce);
+
+	--font-sans: 'GreycliffCF', sans-serif;
+	--font-mono: 'FiraCode', monospace;
+
+	--color-dark-text: color-mix(in oklch, var(--color-dark), transparent 30%);
+	--color-light-text: color-mix(in oklch, var(--color-light), transparent 30%);
+	--color-text: var(--color-dark-text);
+	--color-primary-text: var(--color-text);
+}
+
+.dark {
+	--color-text: var(--color-light-text);
+}
+
+/* 
+fill="#E93B47"
+class="fill-sauce"
+
+fill="#FDA8F3"
+class="fill-gum"
+
+fill="#0F1218"
+class="fill-dark"
+
+fill="#FFCA28"
+class="fill-cheese"
+
+fill="#3BD4E9"
+class="fill-berry"
+
+fill="#F4F5F7"
+class="fill-light"
+
+fill="#E66E5F"
+class="fill-light-pep"
+
+fill="#CC8237"
+
+fill="#EB984E" */
+
+/* gum? FD9BF2 */

@@ -1,47 +1,66 @@
-<script>
-	import posthog from 'posthog-js';
-	import '$lib/css/app.postcss';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import FullScreenMock from '$lib/components/FullScreenMock.svelte';
-	import { returnFavicon, returnOgImage } from '$lib/utils.js';
-	import { page } from '$app/stores';
-	import { browser, dev } from '$app/environment';
+<script lang="ts">
+	import '../app.css';
+	let { children } = $props();
 
-	/** @type {import('./$types').PageData} */
-	export let data;
-
-	data.siteInfo = {
-		url: $page.url,
-		route: $page.route
-	};
-
-	if (browser && !dev && data?.posthog?.key) {
-		posthog.init(data.posthog.key, {
-			api_host: 'https://app.posthog.com'
-		});
-
-		posthog.capture('my event', { property: 'value' });
-	}
-
-	import { setContext } from 'svelte';
-	setContext('data', data);
+	let primary = $state('sauce');
 </script>
 
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;300;400;600;700;800&display=swap"
-		rel="stylesheet"
-	/>
-	<link rel="shortcut icon" href={returnFavicon(data.meta.favicon)} type="image/x-icon" />
-	<meta property="og:image" content={returnOgImage(data.meta.OgImage)} />
-</svelte:head>
-
-<div class="page-wrapper relative">
-	<Header />
-	<slot />
-	<Footer />
-	<FullScreenMock />
+<div style="">
+	{@render children()}
 </div>
+
+<style>
+	@reference "../app.css";
+
+	:global(:root) {
+		@apply font-sans;
+	}
+
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 400;
+		src:
+			url($lib/fonts/GreycliffCF-Regular.woff2) format('woff2'),
+			url($lib/fonts/GreycliffCF-Regular.woff) format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 500;
+		src:
+			url($lib/fonts/GreycliffCF-Medium.woff2) format('woff2'),
+			url($lib/fonts/GreycliffCF-Medium.woff) format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 600;
+		src:
+			url($lib/fonts/GreycliffCF-DemiBold.woff2) format('woff2'),
+			url($lib/fonts/GreycliffCF-DemiBold.woff) format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 600;
+		font-style: italic;
+		src:
+			url($lib/fonts/GreycliffCF-DemiBoldOblique.woff2) format('woff2'),
+			url($lib/fonts/GreycliffCF-DemiBoldOblique.woff) format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GreycliffCF';
+		font-weight: 900;
+		src:
+			url($lib/fonts/GreycliffCF-Heavy.woff2) format('woff2'),
+			url($lib/fonts/GreycliffCF-Heavy.woff) format('woff');
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'FiraCode';
+		font-weight: 100.1;
+		src: url($lib/fonts/FiraCode-VariableFont_wght.ttf) format('ttf');
+		font-display: swap;
+	}
+</style>
