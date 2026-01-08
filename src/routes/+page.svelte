@@ -51,9 +51,9 @@
 		</div>
 	</Container>
 
-	<Container>
+	<!-- <Container>
 		<CTA />
-	</Container>
+	</Container> -->
 </section>
 
 <section class="section" id="experience">
@@ -202,6 +202,6 @@
 		</Container>
 	</section>
 {/if}
-<Container>
+<!-- <Container>
 	<CTA />
-</Container>
+</Container> -->
