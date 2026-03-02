@@ -53,17 +53,7 @@
 
 	<div class="flex gap-4 md:gap-8 items-center">
 		<div class="gap-4 hidden md:flex items-center">
-			{#if data?.links?.resume}
-				<a target="_blank" rel="noreferrer" href={data.links.resume} aria-label="View Resume"
-					><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-						><path fill="none" d="M0 0h24v24H0z" /><path
-							fill="currentColor"
-							d="M16 2l5 5v14.008a.993.993 0 0 1-.993.992H3.993A1 1 0 0 1 3 21.008V2.992C3 2.444 3.445 2 3.993 2H16zm-4 14a4 4 0 1 0 0-8H8v8h4zm-2-6h2a2 2 0 1 1 0 4h-2v-4z"
-						/></svg
-					></a
-				>
-			{/if}
-			<Links sizeClass="h-10" />
+			<Links sizeClass="h-10 w-10" />
 		</div>
 		<div class="w-px h-full bg-gray/10"></div>
 		<button
@@ -78,9 +68,9 @@
 				aria-hidden="true"
 				class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
 			>
-				<div class="w-full h-[2px] bg-gray"></div>
-				<div class="w-full h-[2px] bg-gray"></div>
-				<div class="w-full h-[2px] bg-gray"></div>
+				<div class="w-full h-0.5 bg-gray"></div>
+				<div class="w-full h-0.5 bg-gray"></div>
+				<div class="w-full h-0.5 bg-gray"></div>
 			</div>
 		</button>
 	</div>

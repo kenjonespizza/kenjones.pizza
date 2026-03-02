@@ -4,62 +4,93 @@
 	import LinkedinFill from 'svelte-remixicon/RiLinkedinFill.svelte';
 	import DribbbleFill from 'svelte-remixicon/RiDribbbleFill.svelte';
 	import GithubFill from 'svelte-remixicon/RiGithubFill.svelte';
+	import CalendarEventLine from 'svelte-remixicon/RiCalendarEventLine.svelte';
+	import PassportLine from 'svelte-remixicon/RiPassportLine.svelte';
 
 	const data = getContext('data');
 
 	interface Props {
 		sizeClass?: string;
+		tooltipClass?: string;
 	}
 
-	let { sizeClass = 'h-12' }: Props = $props();
+	let { sizeClass = 'h-12', tooltipClass = 'bg-gray-900 text-white' }: Props = $props();
 </script>
 
+{#if data?.links?.resume}
+	<a
+		href={data?.links.resume}
+		class="relative group transition rounded"
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="View Resume"
+	>
+		<PassportLine
+			class={`${sizeClass} transition py-2 border-b-2 border-transparent hover:border-current`}
+		/>
+		<span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition {tooltipClass}">View Resume</span>
+	</a>
+{/if}
 {#if data?.links?.menu?.linkedIn}
 	<a
 		href={data?.links.menu?.linkedIn}
-		class="transition rounded"
+		class="relative group transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="LinkedIn"
 	>
 		<LinkedinFill
-			size="auto"
 			class={`${sizeClass} transition py-2 border-b-2 border-transparent hover:border-current`}
 		/>
+		<span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition {tooltipClass}">LinkedIn</span>
 	</a>
 {/if}
 {#if data?.links?.menu?.dribbble}
 	<a
 		href={data?.links.menu?.dribbble}
-		class="transition rounded"
+		class="relative group transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="Dribbble"
 	>
 		<DribbbleFill
-			size="auto"
 			class={`${sizeClass} transition py-2 border-b-2 border-transparent hover:border-current`}
 		/>
+		<span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition {tooltipClass}">Dribbble</span>
 	</a>
 {/if}
 {#if data?.links?.menu?.github}
 	<a
 		href={data?.links.menu?.github}
-		class="transition rounded"
+		class="relative group transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="GitHub"
 	>
 		<GithubFill
-			size="auto"
 			class={`${sizeClass} transition py-2 border-b-2 border-transparent hover:border-current`}
 		/>
+		<span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition {tooltipClass}">GitHub</span>
+	</a>
+{/if}
+{#if data?.links?.chat?.url}
+	<a
+		href={data?.links.chat?.url}
+		class="relative group transition rounded"
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="Schedule a Chat"
+	>
+		<CalendarEventLine
+			class={`${sizeClass} transition py-2 border-b-2 border-transparent hover:border-current`}
+		/>
+		<span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition {tooltipClass}">Schedule a Chat</span>
 	</a>
 {/if}
 {#if data?.links?.menu?.polywork}
 	<a
 		href={data?.links.menu?.polywork}
-		class="transition rounded"
+		class="relative group transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="Polywork"
@@ -108,5 +139,6 @@
 				</clipPath>
 			</defs>
 		</svg>
+		<span class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition {tooltipClass}">Polywork</span>
 	</a>
 {/if}

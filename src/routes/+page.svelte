@@ -45,7 +45,9 @@
 	<Container standard>
 		<h2 class="section-heading">About Me.</h2>
 		<div class="side flex flex-col gap-6">
-			{@html data.bio}
+			<div class="prose max-w-none text-xl lg:text-2xl text-gray/70 leading-normal">
+				{@html data.bio}
+			</div>
 			<Gallery />
 		</div>
 	</Container>
@@ -59,7 +61,7 @@
 	<Container standard>
 		<h2 class="section-heading">Experience.</h2>
 		<div
-			class="side flex flex-col gap-6 border-l border-gray-50 pl-6 
+			class="side flex flex-col gap-6 border-l border-gray-50 pl-6
 		lg:pl-6"
 		>
 			<div class="flex flex-col gap-10">
@@ -115,7 +117,7 @@
 					</a>
 				{/if}
 				<a
-					class="w-auto justify-center rounded-full  border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
+					class="w-auto justify-center rounded-full border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"
 					href={`/case-studies/${project.slug}`}
 				>
 					<span>View Case Study</span>
@@ -142,7 +144,7 @@
 				<div class="grid gap-8">
 					{#each data.designs as design, i}
 						<div>
-							<div class="mb-2 ">
+							<div class="mb-2">
 								<h3 class="font-serif text-2xl font-bold">{design.name}</h3>
 								<p class="text-gray/70 text-lg">
 									{design.description}

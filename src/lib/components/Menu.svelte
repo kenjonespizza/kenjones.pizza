@@ -166,7 +166,7 @@
 			</div>
 			<div class="flex space-x-6 items-center">
 				<span class="block text-2xl">Links:</span>
-				<Links sizeClass="w-12 h-12" />
+				<Links sizeClass="w-12 h-12" tooltipClass="bg-white text-gray-900" />
 			</div>
 		</div>
 	</div>
