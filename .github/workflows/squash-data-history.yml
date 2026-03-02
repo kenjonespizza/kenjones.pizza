@@ -39,5 +39,7 @@ jobs:
           git add src/lib/data.js
           git commit -m "chore: update data.js [skip ci]"
 
-      - name: Force push
-        run: git push --force origin main
+      - name: Re-add origin and force push
+        run: |
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push --force origin main
