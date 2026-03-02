@@ -40,11 +40,11 @@
 >
 	<h1 class="">
 		<a href="/" class="flex gap-4 items-center">
-			<div class="rounded-full border border-gray-100">
+			<div class="">
 				<img
 					src={convertToSquareimageAutoFormatAndQuality(data.logoImage.src)}
 					alt="Ken Jones Headshot"
-					class="rounded-full max-h-[50px] max-w-[50px] m-0 p-0 overflow-hidden border-4 border-white block"
+					class="rounded-full max-h-[50px] max-w-[50px] m-0 p-0"
 				/>
 			</div>
 			<span class="text-2xl lg:text-4xl font-serif font-extrabold">{data.name}</span>

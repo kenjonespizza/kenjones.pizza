@@ -1,17 +1,14 @@
 <script>
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import { data } from '$lib/data';
 	import { browser } from '$app/environment';
 	import { scrollToElementById } from '$lib/utils';
 
 	let text = $state(data.titles[0]);
 	let i = 1;
-	const animationIn = [{ opacity: 0 }, { opacity: 1 }];
 
-	const animationInTiming = {
-		duration: 1000,
-		iterations: 1
-	};
+	const { emoji, label } = $derived(parseTitle(text));
 
 	onMount(() => {
 		if (browser) {
@@ -22,42 +19,36 @@
 		}
 	});
 
-	function swipittySwap(node, text) {
-		const el = document.createElement('span');
-		el.classList.add('tagline', 'animate-bounce');
-		el.innerText = text;
-		node.animate(animationIn, animationInTiming);
-		node.appendChild(el);
-
-		return {
-			update(text) {
-				// the value of `bar` has changed
-				const oldEl = node.querySelector('.tagline');
-				node.removeChild(oldEl);
-				const newEl = document.createElement('span');
-				newEl.classList.add('tagline', 'animate-bounce');
-				newEl.innerText = text;
-				node.animate(animationIn, animationInTiming);
-				node.appendChild(newEl);
-			},
-
-			destroy() {
-				// the node has been removed from the DOM
-			}
-		};
+	function parseTitle(str) {
+		const match = str.match(
+			/^(\p{Emoji_Presentation}[\p{Emoji}\uFE0F\u200D\u{1F3FB}-\u{1F3FF}]*\s*)/u
+		);
+		return match
+			? { emoji: match[1].trimEnd(), label: str.slice(match[1].length) }
+			: { emoji: '', label: str };
 	}
 </script>
 
 <div class="relative">
 	<div
-		use:swipittySwap={text}
-		class={`relative transition mt-4 duration-1000 top-0 left-0 text-gray text-5xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[130px]  2xl:text-[180px] font-serif font-bold tracking-[-.06em]`}
-	></div>
+		class="relative mt-4 top-0 left-0 text-gray text-5xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[130px] 2xl:text-[180px] font-serif font-bold tracking-[-.06em]"
+	>
+		{#key text}
+			<span in:fade={{ duration: 1000 }} class="animate inline-block">
+				{#if emoji}
+					<span
+						class="text-5xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[100px] 2xl:text-[180px]"
+					>
+						{emoji}&nbsp;
+					</span>
+				{/if}
+				{label}
+			</span>
+		{/key}
+	</div>
 
 	<button
-		onclick={() => {
-			scrollToElementById('work');
-		}}
+		onclick={() => scrollToElementById('work')}
 		class="absolute -bottom-25 w-auto justify-center rounded-full border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-5.5 px-7.5 py-4.25 text-white hover:text-gray font-medium text-xl items-center transition"
 		>See Work</button
 	>

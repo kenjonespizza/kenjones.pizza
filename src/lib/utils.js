@@ -14,7 +14,7 @@ export const convertToSquareimageAutoFormatAndQuality = (image) => {
 	);
 
 	img
-		.resize(fill().aspectRatio(1).gravity(focusOn(face())))
+		.resize(fill())
 		.delivery(format('auto'))
 		.delivery(quality('auto'));
 

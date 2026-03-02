@@ -45,7 +45,9 @@
 	<Container standard>
 		<h2 class="section-heading">About Me.</h2>
 		<div class="side flex flex-col gap-6">
-			<div class="prose max-w-none text-xl lg:text-2xl text-gray/70 leading-normal">
+			<div
+				class="prose max-w-none text-xl lg:text-2xl text-gray/70 leading-normal prose-code:before:content-none prose-code:after:content-none prose-code:font-mono prose-code:font-light prose-code:bg-gray-50 prose-code:rounded prose-code:px-2 prose-code:py-0.5"
+			>
 				{@html data.bio}
 			</div>
 			<Gallery />
