@@ -7,7 +7,7 @@
 
 	const data = getContext('data');
 
-	$: {
+	$effect(() => {
 		if (browser) {
 			if ($isMenuOpen || $isFullScreenMockOpen) {
 				document.body.classList.add('no-scroll');
@@ -15,7 +15,7 @@
 				document.body.classList.remove('no-scroll');
 			}
 		}
-	}
+	});
 </script>
 
 <div
@@ -31,7 +31,7 @@
 		<button
 			label="Close Menu"
 			class="absolute top-[50px] right-[40px]"
-			on:click={() => {
+			onclick={() => {
 				$isMenuOpen = false;
 			}}
 		>
@@ -41,17 +41,17 @@
 			>
 				<div
 					class="w-[20px] origin-center absolute top-0 left-0 rotate-45 h-[2px] transition duration-1000 bg-white group-hover:rotate-0"
-				/>
+				></div>
 				<div
 					class="w-[20px] origin-center absolute top-0 left-0 -rotate-45 h-[2px] transition duration-1000 bg-white group-hover:-rotate-[540deg]"
-				/>
+				></div>
 			</div>
 		</button>
 
 		<div class="mt-20 lg:mt-0 bg-gray md:max-w-3xl p-[25px]">
 			<span class="block text-2xl">Navigation:</span>
 			<div class="w-full h-px my-6">
-				<div class={`${$isMenuOpen ? 'motion-safe:animate-fillBarH' : ''} bg-white h-full w-0`} />
+				<div class={`${$isMenuOpen ? 'motion-safe:animate-fillBarH' : ''} bg-white h-full w-0`}></div>
 			</div>
 			<ul class="text-3xl md:text-6xl font-serif space-y-6">
 				<li class="group">
@@ -64,7 +64,7 @@
 							class={`${
 								$isMenuOpen ? 'motion-safe:animate-fillBarV' : ''
 							} absolute top-0 left-0 h-0 w-px bg-white`}
-						/>
+						></div>
 						<ul
 							class="flex flex-col lg:flex-row lg:gap-8 border-white pl-0 lg:pl-6 mt-4 lg:items-center transition-all group-hover:border-l-8 lg:group-hover:border-l-8"
 						>
@@ -79,7 +79,7 @@
 							<li class="flex items-center">
 								<a
 									href="/#about"
-									on:click={() => {
+									onclick={() => {
 										$isMenuOpen = false;
 									}}
 									class="w-full text-xl md:text-2xl py-4 hover:underline pl-6 lg:pl-0 transition-all border-0 hover:border-l-8 lg:hover:border-l-0 border-white"
@@ -90,7 +90,7 @@
 							<li class="flex items-center">
 								<a
 									href="/#experience"
-									on:click={() => {
+									onclick={() => {
 										$isMenuOpen = false;
 									}}
 									class="w-full text-xl md:text-2xl py-4 hover:underline pl-6 lg:pl-0 transition-all border-0 hover:border-l-8 lg:hover:border-l-0 border-white"
@@ -101,7 +101,7 @@
 							<li class="flex items-center">
 								<a
 									href="/#work"
-									on:click={() => {
+									onclick={() => {
 										$isMenuOpen = false;
 									}}
 									class="w-full text-xl md:text-2xl py-4 hover:underline pl-6 lg:pl-0 transition-all border-0 hover:border-l-8 lg:hover:border-l-0 border-white"
@@ -112,7 +112,7 @@
 							<li class="flex items-center">
 								<a
 									href="/#next-opportunity"
-									on:click={() => {
+									onclick={() => {
 										$isMenuOpen = false;
 									}}
 									class="w-full text-xl md:text-2xl py-4 hover:underline pl-6 lg:pl-0 transition-all border-0 hover:border-l-8 lg:hover:border-l-0 border-white"
@@ -135,7 +135,7 @@
 									? 'motion-safe:animate-[fillBarV_0.5s_ease-in-out_1.74s_1_forwards]'
 									: ''
 							} absolute top-0 left-0 h-0 w-px bg-white`}
-						/>
+						></div>
 						<ul class="group-hover:border-l-8 border-white transition-all transi mt-6">
 							{#each data.caseStudies as caseStudy}
 								<li>
@@ -157,7 +157,7 @@
 					class={`${
 						$isMenuOpen ? 'motion-safe:animate-[fillBarH_0.5s_ease-in-out_2.25s_1_forwards]' : ''
 					} bg-white h-full w-0`}
-				/>
+				></div>
 			</div>
 			<div class="flex space-x-6 items-center">
 				<span class="block text-2xl">Links:</span>

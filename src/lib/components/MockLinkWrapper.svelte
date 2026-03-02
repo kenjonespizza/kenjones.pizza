@@ -1,12 +1,18 @@
 <script>
-	/** @type {string} */
-	export let href = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [href]
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { href = '', children } = $props();
 </script>
 
 {#if href}
 	<a {href} class="block">
-		<slot />
+		{@render children?.()}
 	</a>
 {:else}
-	<slot />
+	{@render children?.()}
 {/if}

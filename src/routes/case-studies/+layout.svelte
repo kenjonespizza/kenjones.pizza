@@ -1,7 +1,13 @@
 <script>
 	import '$lib/css/app.postcss';
-	/** @type {import('./$types').PageData} */
-	export let data;
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { data, children } = $props();
 </script>
 
 <svelte:head>
@@ -15,5 +21,5 @@
 </svelte:head>
 
 <main class="pt-40 pb-12">
-	<slot />
+	{@render children?.()}
 </main>

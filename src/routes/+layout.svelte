@@ -5,15 +5,23 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import FullScreenMock from '$lib/components/FullScreenMock.svelte';
 	import { returnFavicon, returnOgImage } from '$lib/utils.js';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { browser, dev } from '$app/environment';
+	import { setContext } from 'svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { data = $bindable(), children } = $props();
+	setContext('data', data);
 
 	data.siteInfo = {
-		url: $page.url,
-		route: $page.route
+		url: page.url,
+		route: page.route
 	};
 
 	if (browser && !dev && data?.posthog?.key) {
@@ -23,9 +31,6 @@
 
 		posthog.capture('my event', { property: 'value' });
 	}
-
-	import { setContext } from 'svelte';
-	setContext('data', data);
 </script>
 
 <svelte:head>
@@ -41,7 +46,7 @@
 
 <div class="page-wrapper relative">
 	<Header />
-	<slot />
+	{@render children?.()}
 	<Footer />
 	<FullScreenMock />
 </div>

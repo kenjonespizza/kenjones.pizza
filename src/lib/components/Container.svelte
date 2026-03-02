@@ -1,12 +1,13 @@
 <script>
 	/**
-	 * @type {boolean}
+	 * @typedef {Object} Props
+	 * @property {boolean} [standard]
+	 * @property {string | undefined} [klass]
+	 * @property {import('svelte').Snippet} [children]
 	 */
-	export let standard = false;
-	/**
-	 * @type {string | undefined}
-	 */
-	export let klass = '';
+
+	/** @type {Props} */
+	let { standard = false, klass = '', children } = $props();
 </script>
 
 <div
@@ -14,5 +15,5 @@
 		standard ? 'standard' : ''
 	}`}
 >
-	<slot />
+	{@render children?.()}
 </div>

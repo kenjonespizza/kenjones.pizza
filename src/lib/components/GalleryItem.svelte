@@ -4,13 +4,11 @@
 	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
 	const data = getContext('data');
 
-	export let image;
-
-	/** @type {Object.<string,string>} **/
+	let { image } = $props();
 </script>
 
 <button
-	on:click={() => {
+	onclick={() => {
 		$isLightBoxOpen = true;
 		$CurrentLightBoxImageSrc = image.src;
 		$CurrentLightBoxImageAlt = image.alt;

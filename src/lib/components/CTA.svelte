@@ -4,7 +4,7 @@
 	const data = getContext('data');
 </script>
 
-<div class="-translate-y-24" id="next-opportunity" />
+<div class="-translate-y-24" id="next-opportunity"></div>
 
 <div
 	class="bg-gray p-[50px] xl:p-[100px] rounded-[50px] text-white flex flex-col xl:flex-row justify-between gap-12 xl:items-center"

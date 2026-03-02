@@ -6,26 +6,27 @@
 
 	let data = getContext('data');
 
-	/** @type {string} */
-	export let src = '';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [src]
+	 * @property {string} [alt]
+	 * @property {string} [title]
+	 * @property {string} [href]
+	 * @property {boolean} [offset]
+	 * @property {boolean} [noScroll]
+	 * @property {boolean} [showFullScreenButton]
+	 */
 
-	/** @type {string} */
-	export let alt = '';
-
-	/** @type {string} */
-	export let title = '';
-
-	/** @type {string} */
-	export let href = '';
-
-	/** @type {boolean} */
-	export let offset = false;
-
-	/** @type {boolean} */
-	export let noScroll = false;
-
-	/** @type {boolean} */
-	export let showFullScreenButton = true;
+	/** @type {Props} */
+	let {
+		src = '',
+		alt = '',
+		title = '',
+		href = '',
+		offset = false,
+		noScroll = false,
+		showFullScreenButton = true
+	} = $props();
 
 	/** @type {boolean} */
 	let loaded = false;
@@ -47,9 +48,9 @@
 	}`}
 >
 	<div class="flex gap-[.3rem] p-2">
-		<div class="rounded-full w-[9px] h-[9px] bg-primary" />
-		<div class="rounded-full w-[9px] h-[9px] bg-yellow-500" />
-		<div class="rounded-full w-[9px] h-[9px] bg-green-500" />
+		<div class="rounded-full w-[9px] h-[9px] bg-primary"></div>
+		<div class="rounded-full w-[9px] h-[9px] bg-yellow-500"></div>
+		<div class="rounded-full w-[9px] h-[9px] bg-green-500"></div>
 	</div>
 	<div
 		class={`bg-white aspect-[8/4.8] ${
@@ -67,7 +68,7 @@
 		{#if showFullScreenButton}
 			<button
 				class="sticky left-4 bottom-4 rounded-full p-4 bg-gray text-white motion-safe:animate-[bounce_3s_ease-in-out_infinite] transition hover:bg-white hover:text-gray"
-				on:click|preventDefault={openFullScreenMock}
+				onclick={(e) => { e.preventDefault(); openFullScreenMock(); }}
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
 					><path fill="none" d="M0 0h24v24H0z" /><path

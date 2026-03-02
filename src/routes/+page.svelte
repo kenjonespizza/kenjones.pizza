@@ -129,7 +129,7 @@
 				</a>
 
 				{#if i < data.caseStudies.length - 1}
-					<div class="h-[1px] w-full bg-gray-50 mb-3 mt-4" />
+					<div class="h-[1px] w-full bg-gray-50 mb-3 mt-4"></div>
 				{/if}
 			{/each}
 		</div>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { getContext } from 'svelte';
 
 	import LinkedinFill from 'svelte-remixicon/RiLinkedinFill.svelte';
@@ -7,7 +7,11 @@
 
 	const data = getContext('data');
 
-	export let sizeClass = 'h-12';
+	interface Props {
+		sizeClass?: string;
+	}
+
+	let { sizeClass = 'h-12' }: Props = $props();
 </script>
 
 {#if data?.links?.menu?.linkedIn}

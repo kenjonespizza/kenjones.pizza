@@ -1,17 +1,22 @@
 <script>
 	import Container from '$lib/components/Container.svelte';
 	import Mock from '$lib/components/Mock.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { imageAutoFormatAndQuality } from '$lib/utils';
 	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
 	import LightBox from '$lib/components/LightBox.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('./$types').PageData} data
+	 */
+
+	/** @type {Props} */
+	let { data = $bindable() } = $props();
 
 	data.siteInfo = {
-		url: $page.url,
-		route: $page.route
+		url: page.url,
+		route: page.route
 	};
 </script>
 
@@ -75,7 +80,7 @@
 						{:else}
 							<button
 								class="mt-2 transition rounded-lg hover:ring hover:ring-offset-2 hover:ring-gray hover:ring-offset-white overflow-hidden"
-								on:click={() => {
+								onclick={() => {
 									$isLightBoxOpen = true;
 									$CurrentLightBoxImageSrc = image.src;
 									$CurrentLightBoxImageAlt = image.alt;

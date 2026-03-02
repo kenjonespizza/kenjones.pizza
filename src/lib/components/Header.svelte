@@ -13,14 +13,14 @@
 	/**
 	 * @type {number}
 	 */
-	let y = 0;
+	let y = $state(0);
 
 	afterNavigate(() => {
 		$isMenuOpen = false;
 		// window.scrollTo({ top: 0, behavior: 'smooth' });
 	});
 
-	$: {
+	$effect(() => {
 		if (browser) {
 			if ($isMenuOpen || $isFullScreenMockOpen) {
 				document.body.classList.add('no-scroll');
@@ -28,7 +28,7 @@
 				document.body.classList.remove('no-scroll');
 			}
 		}
-	}
+	});
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -65,11 +65,11 @@
 			{/if}
 			<Links sizeClass="h-10" />
 		</div>
-		<div class="w-px h-full bg-gray/10" />
+		<div class="w-px h-full bg-gray/10"></div>
 		<button
 			label="Open Menu"
 			class=""
-			on:click={() => {
+			onclick={() => {
 				$isMenuOpen = true;
 			}}
 		>
@@ -77,9 +77,9 @@
 			<div
 				class="flex flex-col justify-center gap-[6px] w-[20px] h-[18px] transition-all hover:gap-[2px]"
 			>
-				<div class="w-full h-[2px] bg-gray" />
-				<div class="w-full h-[2px] bg-gray" />
-				<div class="w-full h-[2px] bg-gray" />
+				<div class="w-full h-[2px] bg-gray"></div>
+				<div class="w-full h-[2px] bg-gray"></div>
+				<div class="w-full h-[2px] bg-gray"></div>
 			</div>
 		</button>
 	</div>

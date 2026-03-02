@@ -4,7 +4,7 @@
 	import { browser } from '$app/environment';
 	import { scrollToElementById } from '$lib/utils';
 
-	let text = data.titles[0];
+	let text = $state(data.titles[0]);
 	let i = 1;
 	const animationIn = [{ opacity: 0 }, { opacity: 1 }];
 
@@ -52,10 +52,10 @@
 	<div
 		use:swipittySwap={text}
 		class={`relative transition mt-4 duration-1000 absolute top-0 left-0 text-gray text-5xl sm:text-[80px] md:text-[110px] lg:text-[140px] xl:text-[160px]  2xl:text-[180px] font-serif font-bold tracking-[-.06em]`}
-	/>
+	></div>
 
 	<button
-		on:click={() => {
+		onclick={() => {
 			scrollToElementById('work');
 		}}
 		class="absolute bottom-[-100px] w-auto justify-center rounded-full border border-gray hover:border-gray bg-gray hover:bg-white inline-flex gap-[22px] px-[30px] py-[17px] text-white hover:text-gray font-medium text-xl items-center transition"

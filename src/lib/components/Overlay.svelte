@@ -8,4 +8,4 @@
 			? 'backdrop-blur-md bg-white/50 pointer-events-auto'
 			: 'backdrop-blur-none bg-white/0 pointer-events-none'
 	}`}
-/>
+></div>
