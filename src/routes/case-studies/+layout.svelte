@@ -1,5 +1,5 @@
 <script>
-	import '$lib/css/app.postcss';
+	import '$lib/css/app.css';
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('./$types').PageData} data

@@ -1,6 +1,6 @@
 <script>
 	import { imageAutoFormatAndQuality } from '$lib/utils';
-	import { isFullScreenMockOpen, fullScreenMockSrc, fullScreenMockAlt } from '$lib/stores';
+	import { fullScreenMock } from '$lib/appState.svelte';
 	import { getContext } from 'svelte';
 	import MockLinkWrapper from './MockLinkWrapper.svelte';
 
@@ -32,9 +32,9 @@
 	let loaded = false;
 
 	function openFullScreenMock() {
-		isFullScreenMockOpen.set(true);
-		fullScreenMockSrc.set(src);
-		fullScreenMockAlt.set(alt);
+		fullScreenMock.isOpen = true;
+		fullScreenMock.src = src;
+		fullScreenMock.alt = alt;
 	}
 </script>
 
@@ -67,10 +67,11 @@
 
 		{#if showFullScreenButton}
 			<button
+				aria-label="View full screen"
 				class="sticky left-4 bottom-4 rounded-full p-4 bg-gray text-white motion-safe:animate-[bounce_3s_ease-in-out_infinite] transition hover:bg-white hover:text-gray"
 				onclick={(e) => { e.preventDefault(); openFullScreenMock(); }}
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+				<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
 					><path fill="none" d="M0 0h24v24H0z" /><path
 						fill="currentColor"
 						d="M20 3h2v6h-2V5h-4V3h4zM4 3h4v2H4v4H2V3h2zm16 16v-4h2v6h-6v-2h4zM4 19h4v2H2v-6h2v4z"

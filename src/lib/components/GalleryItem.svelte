@@ -1,21 +1,21 @@
 <script>
-	import { getContext } from 'svelte';
-	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
+	import { lightbox } from '$lib/appState.svelte';
 	import { convertToSquareimageAutoFormatAndQuality } from '$lib/utils';
-	const data = getContext('data');
 
-	let { image } = $props();
+	let { image, index = 0, images = [] } = $props();
 </script>
 
 <button
 	onclick={() => {
-		$isLightBoxOpen = true;
-		$CurrentLightBoxImageSrc = image.src;
-		$CurrentLightBoxImageAlt = image.alt;
+		lightbox.images = images;
+		lightbox.index = index;
+		lightbox.isOpen = true;
 	}}
+	aria-label={`View ${image.alt}`}
 	class={`relative rounded-2xl overflow-hidden transition hover:ring-4 hover:ring-offset-4 hover:ring-offset-white hover:ring-gray`}
 >
 	<div
+		aria-hidden="true"
 		class="absolute z-10 inset-0 flex justify-center items-center w-full h-full bg-gray/50 transition opacity-0 hover:opacity-100 group"
 	>
 		<svg

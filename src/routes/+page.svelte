@@ -7,7 +7,6 @@
 	import LightBox from '$lib/components/LightBox.svelte';
 	import Logos from '$lib/components/Logos.svelte';
 
-	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
 	import { imageAutoFormatAndQuality } from '$lib/utils';
 
 	import { getContext } from 'svelte';

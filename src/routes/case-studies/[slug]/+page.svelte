@@ -3,7 +3,7 @@
 	import Mock from '$lib/components/Mock.svelte';
 	import { page } from '$app/state';
 	import { imageAutoFormatAndQuality } from '$lib/utils';
-	import { isLightBoxOpen, CurrentLightBoxImageSrc, CurrentLightBoxImageAlt } from '$lib/stores';
+	import { lightbox } from '$lib/appState.svelte';
 	import LightBox from '$lib/components/LightBox.svelte';
 
 	/**
@@ -18,6 +18,7 @@
 		url: page.url,
 		route: page.route
 	};
+
 </script>
 
 <svelte:head>
@@ -81,9 +82,9 @@
 							<button
 								class="mt-2 transition rounded-lg hover:ring hover:ring-offset-2 hover:ring-gray hover:ring-offset-white overflow-hidden"
 								onclick={() => {
-									$isLightBoxOpen = true;
-									$CurrentLightBoxImageSrc = image.src;
-									$CurrentLightBoxImageAlt = image.alt;
+									lightbox.images = [image];
+									lightbox.index = 0;
+									lightbox.isOpen = true;
 								}}
 							>
 								<img

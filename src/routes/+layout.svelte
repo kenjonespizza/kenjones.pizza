@@ -1,6 +1,6 @@
 <script>
 	import posthog from 'posthog-js';
-	import '$lib/css/app.postcss';
+	import '$lib/css/app.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import FullScreenMock from '$lib/components/FullScreenMock.svelte';

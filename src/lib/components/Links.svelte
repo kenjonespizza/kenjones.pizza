@@ -20,6 +20,7 @@
 		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="LinkedIn"
 	>
 		<LinkedinFill
 			size="auto"
@@ -33,6 +34,7 @@
 		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="Dribbble"
 	>
 		<DribbbleFill
 			size="auto"
@@ -46,6 +48,7 @@
 		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="GitHub"
 	>
 		<GithubFill
 			size="auto"
@@ -59,8 +62,10 @@
 		class="transition rounded"
 		target="_blank"
 		rel="noopener noreferrer"
+		aria-label="Polywork"
 	>
 		<svg
+			aria-hidden="true"
 			class={`${sizeClass} transition py-2 border-b-2 border-transparent hover:border-current`}
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 25 24"
