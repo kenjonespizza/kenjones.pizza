@@ -1,0 +1,43 @@
+name: Squash data.js history
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/lib/data.js'
+
+jobs:
+  squash-history:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install git-filter-repo
+        run: pip install git-filter-repo
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Save current data.js
+        run: cp src/lib/data.js /tmp/data.js
+
+      - name: Remove data.js from entire history
+        run: git filter-repo --path src/lib/data.js --invert-paths --force
+
+      - name: Restore current data.js
+        run: |
+          cp /tmp/data.js src/lib/data.js
+          git add src/lib/data.js
+          git commit -m "chore: update data.js [skip ci]"
+
+      - name: Force push
+        run: git push --force origin main
